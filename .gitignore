@@ -1,0 +1,6 @@
+.env
+.env.*
+!.env.example
+data/*.json
+!data/bay-area-clusters.json
+!data/.gitkeep

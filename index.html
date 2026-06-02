@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bay Area Cultural Cluster Map</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="map-shell">
+      <div id="realMap" class="real-map" role="img" aria-label="Bay Area score map"></div>
+
+      <header class="map-toolbar" aria-label="Map controls">
+        <div class="brand-lockup">
+          <strong>Bay Area Cluster Map</strong>
+          <span id="dataMode">seed data</span>
+        </div>
+
+        <div class="toolbar-controls">
+          <select id="clusterSelect" class="select-control" aria-label="Cluster"></select>
+          <select id="scaleSelect" class="select-control scale-control" aria-label="Color scale" title="Color scale"></select>
+
+          <div class="pair-fields" id="pairFields" hidden>
+            <span aria-hidden="true">x</span>
+            <select id="secondaryClusterSelect" class="select-control" aria-label="Second cluster"></select>
+          </div>
+
+          <div class="mode-control" aria-label="Map mode">
+            <button class="round-button active" id="singleMode" type="button" title="Single signal" aria-label="Single signal">1</button>
+            <button class="round-button" id="pairMode" type="button" title="Overlap" aria-label="Overlap">2</button>
+          </div>
+
+          <button class="round-button" id="detailsToggle" type="button" title="Details" aria-label="Details">i</button>
+        </div>
+      </header>
+
+      <div class="map-legend" aria-label="Density legend">
+        <strong id="mapTitle">Kumon Gravity</strong>
+        <div class="legend-row">
+          <span>0</span>
+          <div class="gradient-bar"></div>
+          <span id="legendHigh">max</span>
+        </div>
+      </div>
+
+      <aside class="detail-drawer" id="detailDrawer" aria-label="Details" aria-hidden="true">
+        <div class="drawer-heading">
+          <div>
+            <span class="eyebrow">Selected</span>
+            <h2 id="selectionTitle">Kumon Gravity</h2>
+          </div>
+          <button class="round-button" id="drawerClose" type="button" title="Close details" aria-label="Close details">x</button>
+        </div>
+
+        <div class="spotlight">
+          <strong id="currentRead"></strong>
+          <p id="currentReadBody"></p>
+        </div>
+
+        <div class="drawer-grid">
+          <section>
+            <h3>Top Areas</h3>
+            <ol class="rank-list" id="rankList"></ol>
+          </section>
+
+          <section>
+            <h3>Pairings</h3>
+            <div class="insight-list" id="insightList"></div>
+          </section>
+        </div>
+
+        <details class="matrix-details">
+          <summary>Correlation Matrix</summary>
+          <button class="text-button" id="clearPair" type="button">Clear pair</button>
+          <div class="matrix-scroll">
+            <div class="matrix" id="correlationMatrix" role="grid" aria-label="Cluster correlation matrix"></div>
+          </div>
+        </details>
+
+        <details class="query-details">
+          <summary>DQL</summary>
+          <button class="text-button" id="copyQuery" type="button">Copy query</button>
+          <pre><code id="queryText"></code></pre>
+        </details>
+      </aside>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

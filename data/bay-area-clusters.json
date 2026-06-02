@@ -1,0 +1,376 @@
+{
+  "generatedAt": "2026-06-02T01:35:53.280Z",
+  "source": "diffbot-dql-facet",
+  "cities": [
+    {
+      "name": "San Francisco",
+      "baseline": {
+        "organizations": 325109
+      },
+      "values": {
+        "kumon": 1124,
+        "boba": 148,
+        "chai": 114,
+        "indoChinese": 8,
+        "grocery": 6,
+        "ai": 14743,
+        "weekend": 224,
+        "festivals": 35,
+        "weddings": 39,
+        "sports": 113
+      }
+    },
+    {
+      "name": "Oakland",
+      "baseline": {
+        "organizations": 88747
+      },
+      "values": {
+        "kumon": 263,
+        "boba": 27,
+        "chai": 32,
+        "indoChinese": 1,
+        "grocery": 2,
+        "ai": 1986,
+        "weekend": 85,
+        "festivals": 14,
+        "weddings": 17,
+        "sports": 28
+      }
+    },
+    {
+      "name": "Berkeley",
+      "baseline": {
+        "organizations": 37961
+      },
+      "values": {
+        "kumon": 164,
+        "boba": 32,
+        "chai": 39,
+        "indoChinese": 2,
+        "grocery": 0,
+        "ai": 1098,
+        "weekend": 63,
+        "festivals": 5,
+        "weddings": 9,
+        "sports": 14
+      }
+    },
+    {
+      "name": "Daly City",
+      "baseline": {
+        "organizations": 9692
+      },
+      "values": {
+        "kumon": 22,
+        "boba": 10,
+        "chai": 1,
+        "indoChinese": 0,
+        "grocery": 1,
+        "ai": 132,
+        "weekend": 9,
+        "festivals": 1,
+        "weddings": 3,
+        "sports": 7
+      }
+    },
+    {
+      "name": "San Mateo",
+      "baseline": {
+        "organizations": 28803
+      },
+      "values": {
+        "kumon": 101,
+        "boba": 16,
+        "chai": 22,
+        "indoChinese": 3,
+        "grocery": 2,
+        "ai": 1128,
+        "weekend": 25,
+        "festivals": 2,
+        "weddings": 7,
+        "sports": 11
+      }
+    },
+    {
+      "name": "Redwood City",
+      "baseline": {
+        "organizations": 24821
+      },
+      "values": {
+        "kumon": 59,
+        "boba": 10,
+        "chai": 10,
+        "indoChinese": 1,
+        "grocery": 0,
+        "ai": 961,
+        "weekend": 15,
+        "festivals": 4,
+        "weddings": 0,
+        "sports": 12
+      }
+    },
+    {
+      "name": "Menlo Park",
+      "baseline": {
+        "organizations": 19267
+      },
+      "values": {
+        "kumon": 58,
+        "boba": 0,
+        "chai": 4,
+        "indoChinese": 1,
+        "grocery": 0,
+        "ai": 1186,
+        "weekend": 17,
+        "festivals": 1,
+        "weddings": 0,
+        "sports": 8
+      }
+    },
+    {
+      "name": "Palo Alto",
+      "baseline": {
+        "organizations": 46137
+      },
+      "values": {
+        "kumon": 164,
+        "boba": 17,
+        "chai": 22,
+        "indoChinese": 2,
+        "grocery": 0,
+        "ai": 2916,
+        "weekend": 35,
+        "festivals": 1,
+        "weddings": 5,
+        "sports": 15
+      }
+    },
+    {
+      "name": "Mountain View",
+      "baseline": {
+        "organizations": 26028
+      },
+      "values": {
+        "kumon": 97,
+        "boba": 15,
+        "chai": 21,
+        "indoChinese": 4,
+        "grocery": 1,
+        "ai": 1439,
+        "weekend": 35,
+        "festivals": 0,
+        "weddings": 5,
+        "sports": 18
+      }
+    },
+    {
+      "name": "Sunnyvale",
+      "baseline": {
+        "organizations": 29129
+      },
+      "values": {
+        "kumon": 116,
+        "boba": 19,
+        "chai": 85,
+        "indoChinese": 7,
+        "grocery": 3,
+        "ai": 1482,
+        "weekend": 39,
+        "festivals": 7,
+        "weddings": 13,
+        "sports": 23
+      }
+    },
+    {
+      "name": "Santa Clara",
+      "baseline": {
+        "organizations": 35276
+      },
+      "values": {
+        "kumon": 110,
+        "boba": 20,
+        "chai": 51,
+        "indoChinese": 2,
+        "grocery": 1,
+        "ai": 1667,
+        "weekend": 26,
+        "festivals": 1,
+        "weddings": 16,
+        "sports": 24
+      }
+    },
+    {
+      "name": "Cupertino",
+      "baseline": {
+        "organizations": 12370
+      },
+      "values": {
+        "kumon": 86,
+        "boba": 21,
+        "chai": 7,
+        "indoChinese": 1,
+        "grocery": 3,
+        "ai": 507,
+        "weekend": 35,
+        "festivals": 2,
+        "weddings": 3,
+        "sports": 19
+      }
+    },
+    {
+      "name": "Milpitas",
+      "baseline": {
+        "organizations": 14452
+      },
+      "values": {
+        "kumon": 55,
+        "boba": 21,
+        "chai": 41,
+        "indoChinese": 4,
+        "grocery": 6,
+        "ai": 435,
+        "weekend": 24,
+        "festivals": 3,
+        "weddings": 15,
+        "sports": 43
+      }
+    },
+    {
+      "name": "Fremont",
+      "baseline": {
+        "organizations": 38482
+      },
+      "values": {
+        "kumon": 170,
+        "boba": 34,
+        "chai": 93,
+        "indoChinese": 8,
+        "grocery": 5,
+        "ai": 1183,
+        "weekend": 84,
+        "festivals": 7,
+        "weddings": 34,
+        "sports": 58
+      }
+    },
+    {
+      "name": "Hayward",
+      "baseline": {
+        "organizations": 25920
+      },
+      "values": {
+        "kumon": 52,
+        "boba": 24,
+        "chai": 18,
+        "indoChinese": 0,
+        "grocery": 2,
+        "ai": 482,
+        "weekend": 18,
+        "festivals": 1,
+        "weddings": 16,
+        "sports": 16
+      }
+    },
+    {
+      "name": "Pleasanton",
+      "baseline": {
+        "organizations": 22537
+      },
+      "values": {
+        "kumon": 113,
+        "boba": 19,
+        "chai": 29,
+        "indoChinese": 2,
+        "grocery": 5,
+        "ai": 676,
+        "weekend": 28,
+        "festivals": 3,
+        "weddings": 15,
+        "sports": 25
+      }
+    },
+    {
+      "name": "San Ramon",
+      "baseline": {
+        "organizations": 17234
+      },
+      "values": {
+        "kumon": 79,
+        "boba": 9,
+        "chai": 25,
+        "indoChinese": 1,
+        "grocery": 0,
+        "ai": 514,
+        "weekend": 22,
+        "festivals": 1,
+        "weddings": 10,
+        "sports": 18
+      }
+    },
+    {
+      "name": "San Jose",
+      "baseline": {
+        "organizations": 150746
+      },
+      "values": {
+        "kumon": 509,
+        "boba": 112,
+        "chai": 100,
+        "indoChinese": 3,
+        "grocery": 4,
+        "ai": 4472,
+        "weekend": 201,
+        "festivals": 13,
+        "weddings": 38,
+        "sports": 99
+      }
+    }
+  ],
+  "queries": [
+    {
+      "id": "baseline.organizations",
+      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
+    },
+    {
+      "id": "kumon",
+      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"Kumon\",\"Mathnasium\",\"Russian School of Mathematics\",\"AoPS\",\"Code Ninjas\",\"coding classes\",\"SAT\",\"ACT\",\"tutoring\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
+    },
+    {
+      "id": "boba",
+      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"boba\",\"bubble tea\",\"milk tea\",\"tea house\",\"dessert cafe\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
+    },
+    {
+      "id": "chai",
+      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"chai\",\"dosa\",\"chaat\",\"biryani\",\"Indian restaurant\",\"South Indian\",\"Gujarati\",\"Punjabi\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
+    },
+    {
+      "id": "indoChinese",
+      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"Indo Chinese\",\"Indian Chinese\",\"Hakka noodles\",\"Gobi Manchurian\",\"chili paneer\",\"Schezwan\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
+    },
+    {
+      "id": "grocery",
+      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"99 Ranch\",\"Marina Food\",\"India Cash & Carry\",\"Patel Brothers\",\"Apna Bazar\",\"New India Bazar\",\"Asian grocery\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
+    },
+    {
+      "id": "ai",
+      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"artificial intelligence\",\"machine learning\",\"LLM\",\"startup\",\"venture capital\",\"accelerator\",\"software company\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
+    },
+    {
+      "id": "weekend",
+      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"Chinese School\",\"Mandarin School\",\"Hindi School\",\"Tamil School\",\"Telugu School\",\"Bharatanatyam\",\"tabla\",\"piano\",\"chess\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
+    },
+    {
+      "id": "festivals",
+      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"Diwali\",\"Holi\",\"Navratri\",\"Lunar New Year\",\"Chinese New Year\",\"Mid-Autumn\",\"Dragon Boat\",\"cultural festival\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
+    },
+    {
+      "id": "weddings",
+      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"wedding planner\",\"banquet hall\",\"mehndi\",\"henna\",\"mandap\",\"sari\",\"lehenga\",\"qipao\",\"cheongsam\",\"vegetarian catering\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
+    },
+    {
+      "id": "sports",
+      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"badminton\",\"table tennis\",\"cricket\",\"pickleball\",\"chess club\",\"ping pong\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
+    }
+  ]
+}
