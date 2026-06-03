@@ -26,14 +26,9 @@ cluster matches / all indexed Diffbot organizations in that city * 10,000
 
 Raw match counts are still shown in popups and the details drawer. The color response can be switched between `Linear`, `Log`, `Sqrt`, `Sigmoid`, and `Exp` without changing the underlying factual counts.
 
-`Startups` and `Tech Social Gravity` use a hybrid gravity score instead of pure density. The score blends raw city footprint, density per 10k indexed organizations, and the geometric blend of both, so large ecosystem anchors like San Francisco and Palo Alto are not underweighted just because their total indexed organization baseline is also large.
+`Startups` use a hybrid gravity score instead of pure density. The score blends raw city footprint, density per 10k indexed organizations, and the geometric blend of both, so large ecosystem anchors like San Francisco and Palo Alto are not underweighted just because their total indexed organization baseline is also large.
 
-The primary selector is signal-first. Composite indexes are still available, but they are treated as secondary views because route or lifestyle jokes do not always read cleanly as a heatmap.
-
-- `Saturday Route Optimization`: tutoring, weekend schools, Asian groceries, and Asian sports.
-- `Food Crossover`: boba, Indian food, Chinese food, and Asian groceries.
-- `Tech Social Gravity`: weighted startups, VC, meetups, and coworking.
-- `Indian x Chinese Food`: Indian food, Chinese food, and boba.
+The primary selector is signal-only. Composite indexes are intentionally left out of this menu until they move into a separate layer.
 
 Two earlier experimental signals are now folded into broader fields: Indo-Chinese menu terms live inside `Indian Food`, and language-school terms live inside `Weekend Schools`. The earlier university/research signal was removed because it mostly reflected Stanford and UC Berkeley.
 

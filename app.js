@@ -96,15 +96,6 @@ const clusters = [
     dqlTerms: '"meetup","hackathon","networking event","founder community","startup community","developer community"',
     queryType: "Organization",
   },
-  {
-    id: "coworking",
-    label: "Coworking Spaces",
-    color: "#6a7893",
-    copy: "Coworking, flexible workspace, shared offices, and the places where the laptop is a lease.",
-    labelForHigh: "Shared-Desk Front",
-    dqlTerms: '"coworking","co-working","shared office","flexible workspace","WeWork","Regus","Industrious"',
-    queryType: "Organization",
-  },
 ];
 
 const presets = [
@@ -125,11 +116,11 @@ const presets = [
   {
     id: "techSocial",
     label: "Tech Social Gravity",
-    components: ["ai", "vc", "meetups", "coworking"],
+    components: ["ai", "vc", "meetups"],
     scoreMode: "gravity",
-    componentWeights: { ai: 0.45, vc: 0.3, meetups: 0.15, coworking: 0.1 },
+    componentWeights: { ai: 0.5, vc: 0.32, meetups: 0.18 },
     componentScoreWeights: { raw: 0.25, density: 0.2, blended: 0.55 },
-    copy: "Startups, VC, meetups, and coworking gravity.",
+    copy: "Startups, VC, and meetups gravity.",
     labelForHigh: "Founder Weather System",
   },
   {
@@ -141,7 +132,8 @@ const presets = [
   },
 ];
 
-const layers = [...presets, ...clusters];
+const layers = clusters;
+const layerDefinitions = [...presets, ...clusters];
 
 let cities = [
   {
@@ -291,10 +283,6 @@ const pairLabels = {
     title: "Pitch Deck Weather",
     body: "Startups and VC overlap where the startup layer is not just companies, but an ecosystem.",
   },
-  "coworking|meetups": {
-    title: "Laptop Social Layer",
-    body: "Coworking spaces and meetup infrastructure capture the places where work and social graphs blur.",
-  },
 };
 
 const scaleOptions = [
@@ -312,7 +300,7 @@ let selectedCityName = null;
 let dataModeLabel = "seed data";
 let popupCityName = null;
 
-const clusterById = new Map(layers.map((cluster) => [cluster.id, cluster]));
+const clusterById = new Map(layerDefinitions.map((cluster) => [cluster.id, cluster]));
 let cityByName = new Map(cities.map((city) => [city.name, city]));
 let ranges = {};
 
@@ -763,10 +751,8 @@ function appendOptionGroup(select, label, options) {
 function fillLayerSelect(select, excludedId = null) {
   const current = select.value;
   select.innerHTML = "";
-  const presetOptions = presets.filter((cluster) => cluster.id !== excludedId);
   const signalOptions = clusters.filter((cluster) => cluster.id !== excludedId);
   appendOptionGroup(select, "Signals", signalOptions);
-  appendOptionGroup(select, "Composites", presetOptions);
   if (layers.some((cluster) => cluster.id === current && cluster.id !== excludedId)) {
     select.value = current;
   }

@@ -85,7 +85,7 @@ const labels = [
     dx: 10,
     dy: -70,
     title: "Founder Fog Advisory",
-    detail: "startups, meetups, coworking",
+    detail: "startups, meetups, pitch decks",
     className: "big",
   },
   {
@@ -149,7 +149,7 @@ function cityValue(cityName, signal) {
 
 function systemStrength(system) {
   const signalsBySystem = {
-    startup: ["ai", "meetups", "coworking"],
+    startup: ["ai", "meetups"],
     vc: ["vc"],
     weekend: ["weekend"],
     sports: ["sports"],

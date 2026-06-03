@@ -126,12 +126,6 @@ const clusters = [
     field: "description",
     terms: ["meetup", "hackathon", "networking event", "founder community", "startup community", "developer community"],
   },
-  {
-    id: "coworking",
-    type: "Organization",
-    field: "description",
-    terms: ["coworking", "co-working", "shared office", "flexible workspace", "WeWork", "Regus", "Industrious"],
-  },
 ];
 
 function parseEnv(text) {

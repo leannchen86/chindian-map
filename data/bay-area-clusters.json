@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-03T07:19:44.456Z",
+  "generatedAt": "2026-06-03T09:14:50.344Z",
   "source": "diffbot-dql-facet",
   "cities": [
     {
@@ -17,8 +17,7 @@
         "weekend": 409,
         "sports": 76,
         "vc": 2049,
-        "meetups": 1723,
-        "coworking": 309
+        "meetups": 1723
       }
     },
     {
@@ -36,8 +35,7 @@
         "weekend": 124,
         "sports": 18,
         "vc": 94,
-        "meetups": 281,
-        "coworking": 62
+        "meetups": 281
       }
     },
     {
@@ -55,8 +53,7 @@
         "weekend": 72,
         "sports": 10,
         "vc": 86,
-        "meetups": 173,
-        "coworking": 35
+        "meetups": 173
       }
     },
     {
@@ -74,8 +71,7 @@
         "weekend": 20,
         "sports": 6,
         "vc": 3,
-        "meetups": 5,
-        "coworking": 1
+        "meetups": 5
       }
     },
     {
@@ -93,8 +89,7 @@
         "weekend": 36,
         "sports": 8,
         "vc": 145,
-        "meetups": 147,
-        "coworking": 27
+        "meetups": 147
       }
     },
     {
@@ -112,8 +107,7 @@
         "weekend": 20,
         "sports": 8,
         "vc": 119,
-        "meetups": 60,
-        "coworking": 8
+        "meetups": 60
       }
     },
     {
@@ -131,8 +125,7 @@
         "weekend": 21,
         "sports": 8,
         "vc": 494,
-        "meetups": 46,
-        "coworking": 17
+        "meetups": 46
       }
     },
     {
@@ -150,8 +143,7 @@
         "weekend": 44,
         "sports": 6,
         "vc": 684,
-        "meetups": 216,
-        "coworking": 28
+        "meetups": 216
       }
     },
     {
@@ -169,8 +161,7 @@
         "weekend": 42,
         "sports": 13,
         "vc": 121,
-        "meetups": 222,
-        "coworking": 13
+        "meetups": 222
       }
     },
     {
@@ -188,8 +179,7 @@
         "weekend": 55,
         "sports": 16,
         "vc": 101,
-        "meetups": 180,
-        "coworking": 21
+        "meetups": 180
       }
     },
     {
@@ -207,8 +197,7 @@
         "weekend": 48,
         "sports": 20,
         "vc": 141,
-        "meetups": 145,
-        "coworking": 12
+        "meetups": 145
       }
     },
     {
@@ -226,8 +215,7 @@
         "weekend": 51,
         "sports": 14,
         "vc": 52,
-        "meetups": 50,
-        "coworking": 8
+        "meetups": 50
       }
     },
     {
@@ -245,8 +233,7 @@
         "weekend": 41,
         "sports": 36,
         "vc": 17,
-        "meetups": 40,
-        "coworking": 4
+        "meetups": 40
       }
     },
     {
@@ -264,8 +251,7 @@
         "weekend": 104,
         "sports": 46,
         "vc": 41,
-        "meetups": 132,
-        "coworking": 6
+        "meetups": 132
       }
     },
     {
@@ -283,8 +269,7 @@
         "weekend": 27,
         "sports": 11,
         "vc": 11,
-        "meetups": 32,
-        "coworking": 3
+        "meetups": 32
       }
     },
     {
@@ -302,8 +287,7 @@
         "weekend": 42,
         "sports": 19,
         "vc": 28,
-        "meetups": 46,
-        "coworking": 10
+        "meetups": 46
       }
     },
     {
@@ -321,8 +305,7 @@
         "weekend": 26,
         "sports": 15,
         "vc": 15,
-        "meetups": 64,
-        "coworking": 9
+        "meetups": 64
       }
     },
     {
@@ -340,8 +323,7 @@
         "weekend": 262,
         "sports": 72,
         "vc": 204,
-        "meetups": 565,
-        "coworking": 58
+        "meetups": 565
       }
     }
   ],
@@ -389,10 +371,6 @@
     {
       "id": "meetups",
       "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"meetup\",\"hackathon\",\"networking event\",\"founder community\",\"startup community\",\"developer community\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
-    },
-    {
-      "id": "coworking",
-      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"coworking\",\"co-working\",\"shared office\",\"flexible workspace\",\"WeWork\",\"Regus\",\"Industrious\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
     }
   ]
 }
