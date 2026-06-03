@@ -1,0 +1,266 @@
+:root {
+  color-scheme: light;
+  --ink: #162024;
+  --muted: #607174;
+  --paper: #f4f0e5;
+  --panel: rgba(255, 252, 241, 0.86);
+  --line: rgba(27, 37, 40, 0.22);
+  --shadow: 0 18px 55px rgba(25, 31, 32, 0.24);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  display: grid;
+  place-items: center;
+  overflow: auto;
+  background: #e5e0d3;
+  color: var(--ink);
+}
+
+.poster-shell {
+  position: relative;
+  width: min(100vw, 1080px);
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--paper);
+  box-shadow: 0 20px 80px rgba(25, 31, 32, 0.28);
+  isolation: isolate;
+}
+
+.poster-map,
+.weather-overlay,
+.label-layer {
+  position: absolute;
+  inset: 0;
+}
+
+.poster-map {
+  z-index: 1;
+  background: #e9e4d7;
+}
+
+.poster-map .leaflet-tile-pane {
+  filter: grayscale(0.82) saturate(0.36) brightness(1.14) contrast(0.9);
+  opacity: 0.68;
+}
+
+.poster-map .leaflet-control-container {
+  display: none;
+}
+
+.weather-overlay {
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+.label-layer {
+  z-index: 3;
+  pointer-events: none;
+}
+
+.poster-title,
+.poster-legend,
+.poster-footer,
+.map-label {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.poster-title {
+  position: absolute;
+  z-index: 4;
+  top: 24px;
+  left: 24px;
+  width: min(560px, calc(100% - 48px));
+  padding: 20px 22px;
+}
+
+.poster-title span,
+.poster-legend strong,
+.poster-footer {
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 840;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.poster-title h1 {
+  margin: 3px 0 8px;
+  font-size: clamp(2.15rem, 4.6vw, 3.4rem);
+  line-height: 0.94;
+  letter-spacing: 0;
+}
+
+.poster-title p {
+  max-width: 430px;
+  margin: 0;
+  color: #3f4c4f;
+  font-size: 0.95rem;
+  font-weight: 660;
+  line-height: 1.35;
+}
+
+.poster-legend {
+  position: absolute;
+  z-index: 4;
+  right: 24px;
+  bottom: 58px;
+  display: grid;
+  gap: 9px;
+  width: 260px;
+  padding: 14px;
+}
+
+.poster-legend div {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  align-items: center;
+  gap: 9px;
+  color: #273235;
+  font-size: 0.84rem;
+  font-weight: 760;
+}
+
+.swatch {
+  display: block;
+  width: 28px;
+  height: 12px;
+  border: 1px solid rgba(23, 33, 36, 0.18);
+  border-radius: 999px;
+}
+
+.swatch.startup {
+  background: #496cae;
+}
+
+.swatch.vc {
+  background: #7d579b;
+}
+
+.swatch.weekend {
+  background: #e38a52;
+}
+
+.swatch.sports {
+  background: #5fa16b;
+}
+
+.swatch.food {
+  background: #d8b451;
+}
+
+.poster-footer {
+  position: absolute;
+  z-index: 4;
+  right: 24px;
+  bottom: 18px;
+  max-width: min(510px, calc(100% - 48px));
+  padding: 8px 10px;
+  background: rgba(255, 252, 241, 0.74);
+}
+
+.map-label {
+  position: absolute;
+  max-width: 220px;
+  padding: 9px 11px;
+  transform: translate(-50%, -50%);
+  color: var(--ink);
+}
+
+.map-label strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.06;
+  letter-spacing: 0;
+}
+
+.map-label span {
+  display: block;
+  margin-top: 3px;
+  color: #4a585b;
+  font-size: 0.72rem;
+  font-weight: 740;
+  line-height: 1.22;
+}
+
+.map-label.compact {
+  max-width: 166px;
+}
+
+.map-label.big strong {
+  font-size: 1.16rem;
+}
+
+.front-line {
+  fill: none;
+  stroke: rgba(36, 45, 48, 0.38);
+  stroke-linecap: round;
+  stroke-width: 2.2;
+  stroke-dasharray: 7 8;
+}
+
+.isobar {
+  fill: none;
+  stroke: rgba(24, 34, 37, 0.2);
+  stroke-width: 1.35;
+}
+
+.blob {
+  opacity: 0.9;
+  filter: blur(8px);
+}
+
+.blob-ring {
+  fill: none;
+  opacity: 0.66;
+  stroke-width: 2.4;
+}
+
+@media (max-width: 760px) {
+  .poster-shell {
+    width: 100vw;
+    aspect-ratio: 4 / 5;
+  }
+
+  .poster-title {
+    top: 12px;
+    left: 12px;
+    width: calc(100% - 24px);
+    padding: 14px;
+  }
+
+  .poster-title p {
+    font-size: 0.82rem;
+  }
+
+  .poster-legend {
+    right: 12px;
+    bottom: 50px;
+    width: min(240px, calc(100% - 24px));
+  }
+
+  .poster-footer {
+    right: 12px;
+    bottom: 10px;
+    font-size: 0.62rem;
+  }
+}

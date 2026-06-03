@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bay Area Chindian Weather Map</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="./poster.css" />
+  </head>
+  <body>
+    <main class="poster-shell">
+      <div id="posterMap" class="poster-map" role="img" aria-label="Static satirical weather map of Bay Area cultural signals"></div>
+      <svg id="weatherOverlay" class="weather-overlay" aria-hidden="true"></svg>
+      <div id="labelLayer" class="label-layer" aria-hidden="true"></div>
+
+      <header class="poster-title">
+        <span>Bay Area Chindian Weather Service</span>
+        <h1>Tonight's Cultural Forecast</h1>
+        <p>Diffbot city signals, forecasted with unserious meteorology. Overlapping fronts are the point.</p>
+      </header>
+
+      <aside class="poster-legend" aria-label="Weather signal legend">
+        <strong>Active fronts</strong>
+        <div><i class="swatch startup"></i><span>Startups + meetups</span></div>
+        <div><i class="swatch vc"></i><span>VC pressure</span></div>
+        <div><i class="swatch weekend"></i><span>Weekend schools</span></div>
+        <div><i class="swatch sports"></i><span>Asian sports</span></div>
+        <div><i class="swatch food"></i><span>Food + boba humidity</span></div>
+      </aside>
+
+      <footer class="poster-footer">
+        Diffbot KG organization facets, Bay Area cities only. Satire level: mild. Census level: zero.
+      </footer>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./poster.js"></script>
+  </body>
+</html>

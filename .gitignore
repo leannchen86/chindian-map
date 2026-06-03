@@ -4,3 +4,4 @@
 data/*.json
 !data/bay-area-clusters.json
 !data/.gitkeep
+poster-preview.png

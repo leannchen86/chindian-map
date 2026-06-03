@@ -12,6 +12,12 @@ python3 -m http.server 4178
 http://127.0.0.1:4178/
 ```
 
+There is also a static poster draft:
+
+```txt
+http://127.0.0.1:4178/poster.html
+```
+
 The current data falls back to seeded city-level counts. If `data/bay-area-clusters.json` exists, the app loads that Diffbot snapshot instead. Most signal layers use coverage-adjusted density:
 
 ```txt
