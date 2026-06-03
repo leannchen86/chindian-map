@@ -20,14 +20,16 @@ cluster matches / all indexed Diffbot organizations in that city * 10,000
 
 Raw match counts are still shown in popups and the details drawer. The color response can be switched between `Linear`, `Log`, `Sqrt`, `Sigmoid`, and `Exp` without changing the underlying factual counts.
 
-`AI / Startup Gravity` and `Tech / Social Gravity` use a hybrid gravity score instead of pure density. The score blends raw city footprint, density per 10k indexed organizations, and the geometric blend of both, so large ecosystem anchors like San Francisco and Palo Alto are not underweighted just because their total indexed organization baseline is also large.
+`Startup Gravity` and `Tech Social Gravity` use a hybrid gravity score instead of pure density. The score blends raw city footprint, density per 10k indexed organizations, and the geometric blend of both, so large ecosystem anchors like San Francisco and Palo Alto are not underweighted just because their total indexed organization baseline is also large.
 
-Preset layers are composite indexes built from component signals:
+The primary selector is signal-first. Composite indexes are still available, but they are treated as secondary views because route or lifestyle jokes do not always read cleanly as a heatmap.
 
-- `Saturday Route Optimization`: tutoring, weekend schools, language schools, Asian groceries, and racket sports.
-- `Food Crossover`: boba, Indian restaurants, Chinese restaurants, Indo-Chinese menus, and Asian groceries.
-- `Tech / Social Gravity`: weighted AI/startups, VC/accelerators, meetups, coworking, and university/research orgs.
-- `Indian x Chinese Food`: Indian restaurants, Chinese restaurants, boba, and Indo-Chinese menus.
+- `Saturday Route Optimization`: tutoring, weekend academies, Asian groceries, and sports.
+- `Food Crossover`: boba, Indian food, Chinese food, and Asian groceries.
+- `Tech Social Gravity`: weighted startup gravity, startup capital, startup events, coworking, and research orgs.
+- `Indian x Chinese Food`: Indian food, Chinese food, and boba.
+
+Two earlier experimental signals are now folded into broader fields: Indo-Chinese menu terms live inside `Indian Food`, and language-school terms live inside `Weekend Academies`.
 
 The DQL panel in the UI shows the intended Diffbot handoff: facet each signal by Bay Area city, then compute densities and pairwise correlations from those city distributions.
 

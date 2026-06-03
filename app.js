@@ -4,7 +4,7 @@ const BAY_AREA_FILTER =
 const clusters = [
   {
     id: "kumon",
-    label: "Tutoring / Test Prep",
+    label: "Tutoring",
     color: "#e26f5a",
     copy: "Tutoring, test prep, coding schools, and the unmistakable scent of Saturday morning optimization.",
     labelForHigh: "After-School Pressure Zone",
@@ -22,29 +22,21 @@ const clusters = [
   },
   {
     id: "chai",
-    label: "Indian Restaurants",
+    label: "Indian Food",
     color: "#d49a3a",
-    copy: "Indian food, chai spots, dosa places, chaat counters, and parental dinner diplomacy.",
+    sourceIds: ["chai", "indoChinese"],
+    copy: "Indian food, chai spots, dosa places, chaat counters, Indo-Chinese menus, and parental dinner diplomacy.",
     labelForHigh: "Masala Logistics Hub",
-    dqlTerms: '"chai","dosa","chaat","biryani","Indian restaurant","South Indian","Gujarati","Punjabi"',
+    dqlTerms: '"chai","dosa","chaat","biryani","Indian restaurant","South Indian","Gujarati","Punjabi","Indo Chinese","Indian Chinese","Hakka noodles","Gobi Manchurian","chili paneer","Schezwan"',
     queryType: "Organization",
   },
   {
     id: "chineseFood",
-    label: "Chinese Restaurants",
+    label: "Chinese Food",
     color: "#cc6e42",
     copy: "Dim sum, hot pot, noodle houses, Sichuan, Cantonese, Taiwanese, and the other half of the dinner map.",
     labelForHigh: "Hot Pot / Dim Sum Belt",
     dqlTerms: '"Chinese restaurant","dim sum","hot pot","Sichuan","Cantonese","Taiwanese restaurant","Shanghainese","noodle house"',
-    queryType: "Organization",
-  },
-  {
-    id: "indoChinese",
-    label: "Indo-Chinese Menus",
-    color: "#8a5a84",
-    copy: "The literal fusion layer: Hakka noodles, Gobi Manchurian, chili paneer, and Schezwan spelling variations.",
-    labelForHigh: "Gobi Manchurian Belt",
-    dqlTerms: '"Indo Chinese","Indian Chinese","Hakka noodles","Gobi Manchurian","chili paneer","Schezwan"',
     queryType: "Organization",
   },
   {
@@ -58,7 +50,7 @@ const clusters = [
   },
   {
     id: "ai",
-    label: "AI / Startup Gravity",
+    label: "Startup Gravity",
     color: "#315f8f",
     scoreMode: "gravity",
     scoreWeights: { raw: 0.4, density: 0.3, blended: 0.3 },
@@ -69,25 +61,17 @@ const clusters = [
   },
   {
     id: "weekend",
-    label: "Weekend Schools",
+    label: "Weekend Academies",
     color: "#b35648",
-    copy: "Mandarin, Tamil, Telugu, Hindi, chess, piano, Bharatanatyam, and the general disappearance of free Saturdays.",
+    sourceIds: ["weekend", "language"],
+    copy: "Language schools, cultural classes, chess, music, dance, and the general disappearance of free Saturdays.",
     labelForHigh: "Saturday Never Happened",
-    dqlTerms: '"Chinese School","Mandarin School","Hindi School","Tamil School","Telugu School","Bharatanatyam","tabla","piano","chess"',
-    queryType: "Organization",
-  },
-  {
-    id: "language",
-    label: "Language Schools",
-    color: "#a96549",
-    copy: "Mandarin, Cantonese, Hindi, Tamil, Telugu, Korean, Japanese, and the general engineering of bilingual weekends.",
-    labelForHigh: "Language-School Weather",
-    dqlTerms: '"language school","Mandarin School","Chinese language","Cantonese","Hindi class","Tamil class","Telugu class","Korean school","Japanese school"',
+    dqlTerms: '"language school","Chinese School","Mandarin School","Chinese language","Cantonese","Hindi School","Hindi class","Tamil School","Tamil class","Telugu School","Telugu class","Korean school","Japanese school","Bharatanatyam","tabla","piano","chess"',
     queryType: "Organization",
   },
   {
     id: "sports",
-    label: "Badminton / Cricket / TT",
+    label: "Badminton Cricket Table Tennis",
     color: "#517a50",
     copy: "Badminton, cricket, table tennis, pickleball, and chess clubs: the underrated social graph.",
     labelForHigh: "Weekend League Diplomacy",
@@ -96,7 +80,7 @@ const clusters = [
   },
   {
     id: "vc",
-    label: "VC / Accelerators",
+    label: "Startup Capital",
     color: "#476da2",
     copy: "Venture firms, accelerators, incubators, seed funds, angel groups, and the institutions around startup weather.",
     labelForHigh: "Capital Pressure System",
@@ -105,7 +89,7 @@ const clusters = [
   },
   {
     id: "meetups",
-    label: "Meetups / Events Orgs",
+    label: "Startup Events",
     color: "#5c73a5",
     copy: "Meetups, hackathons, networking events, founder communities, and developer communities.",
     labelForHigh: "Networking Front",
@@ -123,7 +107,7 @@ const clusters = [
   },
   {
     id: "research",
-    label: "University / Research",
+    label: "Research",
     color: "#4f8797",
     copy: "Universities, research institutes, labs, and the academic gravity underneath the startup layer.",
     labelForHigh: "Research Gravity Well",
@@ -136,20 +120,20 @@ const presets = [
   {
     id: "saturday",
     label: "Saturday Route Optimization",
-    components: ["kumon", "weekend", "language", "grocery", "sports"],
-    copy: "Tutoring, language school, Asian groceries, and racket sports fused into one suburban logistics index.",
+    components: ["kumon", "weekend", "grocery", "sports"],
+    copy: "Tutoring, weekend academies, Asian groceries, and sports fused into one suburban logistics index.",
     labelForHigh: "Maximum Saturday Compression",
   },
   {
     id: "foodCrossover",
     label: "Food Crossover",
-    components: ["boba", "chai", "chineseFood", "indoChinese", "grocery"],
-    copy: "Boba, Indian food, Chinese restaurants, Indo-Chinese menus, and grocery infrastructure.",
+    components: ["boba", "chai", "chineseFood", "grocery"],
+    copy: "Boba, Indian food, Chinese food, and grocery infrastructure.",
     labelForHigh: "Dinner-Plan Probability Field",
   },
   {
     id: "techSocial",
-    label: "Tech / Social Gravity",
+    label: "Tech Social Gravity",
     components: ["ai", "vc", "meetups", "coworking", "research"],
     scoreMode: "gravity",
     componentWeights: { ai: 0.38, vc: 0.24, meetups: 0.1, coworking: 0.08, research: 0.2 },
@@ -160,8 +144,8 @@ const presets = [
   {
     id: "foodOverlap",
     label: "Indian x Chinese Food",
-    components: ["chai", "chineseFood", "boba", "indoChinese"],
-    copy: "Indian restaurants, Chinese restaurants, boba, and the literal Indo-Chinese overlap layer.",
+    components: ["chai", "chineseFood", "boba"],
+    copy: "Indian food, Chinese food, and boba as the practical group-dinner overlap layer.",
     labelForHigh: "Cross-Cuisine Pressure Zone",
   },
 ];
@@ -300,17 +284,9 @@ const pairLabels = {
     title: "Parent Errand Stack",
     body: "Tutoring centers and grocery anchors cluster into the most efficient Saturday route possible.",
   },
-  "chineseFood|indoChinese": {
-    title: "Schezwan Drift",
-    body: "Chinese restaurant infrastructure and Indo-Chinese menu language trace the places where fusion stops being theoretical.",
-  },
   "sports|weekend": {
     title: "Saturday Was Never Free",
-    body: "Weekend schools and racket sports form the extracurricular backbone of suburban Asian logistics.",
-  },
-  "language|weekend": {
-    title: "Bilingual Saturday Layer",
-    body: "Language schools and weekend-school signals overlap where Saturday becomes a curriculum.",
+    body: "Weekend academies and sports form the extracurricular backbone of suburban Asian logistics.",
   },
   "chai|grocery": {
     title: "Masala Supply Chain",
@@ -338,7 +314,7 @@ const scaleOptions = [
   { id: "exp", label: "Exp" },
 ];
 
-let activeClusterId = "saturday";
+let activeClusterId = "ai";
 let activePair = null;
 let activeScaleId = "linear";
 let selectedCityName = null;
@@ -425,7 +401,8 @@ const els = {
 };
 
 function rawMeasure(city, clusterId) {
-  return Number(city.values[clusterId] ?? 0);
+  const sourceIds = clusterById.get(clusterId)?.sourceIds ?? [clusterId];
+  return sourceIds.reduce((sum, sourceId) => sum + Number(city.values[sourceId] ?? 0), 0);
 }
 
 function baselineOrganizations(city) {
@@ -797,8 +774,8 @@ function fillLayerSelect(select, excludedId = null) {
   select.innerHTML = "";
   const presetOptions = presets.filter((cluster) => cluster.id !== excludedId);
   const signalOptions = clusters.filter((cluster) => cluster.id !== excludedId);
-  appendOptionGroup(select, "Presets", presetOptions);
   appendOptionGroup(select, "Signals", signalOptions);
+  appendOptionGroup(select, "Composites", presetOptions);
   if (layers.some((cluster) => cluster.id === current && cluster.id !== excludedId)) {
     select.value = current;
   }
