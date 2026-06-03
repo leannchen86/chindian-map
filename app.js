@@ -60,6 +60,8 @@ const clusters = [
     id: "ai",
     label: "AI / Startup Gravity",
     color: "#315f8f",
+    scoreMode: "gravity",
+    scoreWeights: { raw: 0.4, density: 0.3, blended: 0.3 },
     copy: "AI companies, software orgs, accelerators, venture-adjacent offices, and places where people say agentic out loud.",
     labelForHigh: "Seed Round Weather System",
     dqlTerms: '"artificial intelligence","machine learning","LLM","computer vision","natural language processing","AI startup","software company"',
@@ -149,6 +151,9 @@ const presets = [
     id: "techSocial",
     label: "Tech / Social Gravity",
     components: ["ai", "vc", "meetups", "coworking", "research"],
+    scoreMode: "gravity",
+    componentWeights: { ai: 0.38, vc: 0.24, meetups: 0.1, coworking: 0.08, research: 0.2 },
+    componentScoreWeights: { raw: 0.25, density: 0.2, blended: 0.55 },
     copy: "AI, venture, meetups, coworking, and university/research gravity.",
     labelForHigh: "Founder Weather System",
   },
@@ -361,6 +366,15 @@ function recomputeRanges() {
     };
   }
 
+  for (const cluster of clusters) {
+    const metricValues = cities.map((city) => signalMeasure(city, cluster.id));
+    ranges[cluster.id] = {
+      ...ranges[cluster.id],
+      metricMin: Math.min(...metricValues),
+      metricMax: Math.max(...metricValues),
+    };
+  }
+
   for (const preset of presets) {
     const metricValues = cities.map((city) => layerMeasure(city, preset.id));
     ranges[preset.id] = {
@@ -428,6 +442,42 @@ function isPreset(layerId) {
   return Boolean(clusterById.get(layerId)?.components);
 }
 
+function isGravityLayer(layerId) {
+  return clusterById.get(layerId)?.scoreMode === "gravity";
+}
+
+function normalizedRawMeasure(city, clusterId) {
+  const max = ranges[clusterId]?.max ?? 0;
+  if (!max) return 0;
+  return rawMeasure(city, clusterId) / max;
+}
+
+function normalizedDensityMeasure(city, clusterId) {
+  const max = ranges[clusterId]?.densityMax ?? ranges[clusterId]?.metricMax ?? 0;
+  if (!max) return 0;
+  return densityMeasure(city, clusterId) / max;
+}
+
+function gravityScore(city, clusterId, weights = {}) {
+  const raw = normalizedRawMeasure(city, clusterId);
+  const density = normalizedDensityMeasure(city, clusterId);
+  const blended = Math.sqrt(raw * density);
+  const rawWeight = weights.raw ?? 0.4;
+  const densityWeight = weights.density ?? 0.3;
+  const blendedWeight = weights.blended ?? 0.3;
+  const totalWeight = rawWeight + densityWeight + blendedWeight;
+  if (!totalWeight) return 0;
+  return ((raw * rawWeight) + (density * densityWeight) + (blended * blendedWeight)) / totalWeight;
+}
+
+function signalMeasure(city, clusterId) {
+  const layer = clusterById.get(clusterId);
+  if (layer?.scoreMode === "gravity") {
+    return gravityScore(city, clusterId, layer.scoreWeights) * 100;
+  }
+  return densityMeasure(city, clusterId);
+}
+
 function componentScore(city, clusterId) {
   const max = ranges[clusterId]?.densityMax ?? ranges[clusterId]?.metricMax ?? 0;
   if (!max) return 0;
@@ -437,10 +487,24 @@ function componentScore(city, clusterId) {
 function layerMeasure(city, layerId) {
   const layer = clusterById.get(layerId);
   if (layer?.components?.length) {
+    if (layer.scoreMode === "gravity") {
+      const componentWeights = layer.componentWeights ?? {};
+      let weightedScore = 0;
+      let totalWeight = 0;
+
+      for (const componentId of layer.components) {
+        const weight = componentWeights[componentId] ?? 1;
+        weightedScore += gravityScore(city, componentId, layer.componentScoreWeights) * weight;
+        totalWeight += weight;
+      }
+
+      return totalWeight ? (weightedScore / totalWeight) * 100 : 0;
+    }
+
     const averageComponentScore = average(layer.components.map((componentId) => componentScore(city, componentId)));
     return averageComponentScore * 100;
   }
-  return densityMeasure(city, layerId);
+  return signalMeasure(city, layerId);
 }
 
 function norm(city, clusterId) {
@@ -634,13 +698,14 @@ function formatNumber(value, digits = 0) {
 }
 
 function metricText(city, layerId) {
+  if (isGravityLayer(layerId)) return `${formatNumber(layerMeasure(city, layerId), 1)} gravity`;
   if (isPreset(layerId)) return `${formatNumber(layerMeasure(city, layerId), 1)} index`;
   if (!baselineOrganizations(city)) return `${formatNumber(rawMeasure(city, layerId))} matches`;
   return `${formatNumber(densityMeasure(city, layerId), 1)} / 10k orgs`;
 }
 
 function metricShort(city, layerId) {
-  if (isPreset(layerId)) return formatNumber(layerMeasure(city, layerId), 1);
+  if (isPreset(layerId) || isGravityLayer(layerId)) return formatNumber(layerMeasure(city, layerId), 1);
   if (!baselineOrganizations(city)) return formatNumber(rawMeasure(city, layerId));
   return formatNumber(densityMeasure(city, layerId), 1);
 }
@@ -657,6 +722,9 @@ function clusterMeasureLine(city, layerId) {
   }
   const raw = rawMeasure(city, layerId);
   if (!baselineOrganizations(city)) return `${formatNumber(raw)} matches`;
+  if (isGravityLayer(layerId)) {
+    return `${metricText(city, layerId)} (${formatNumber(raw)} matches; ${formatNumber(densityMeasure(city, layerId), 1)} / 10k orgs)`;
+  }
   return `${metricText(city, layerId)} (${formatNumber(raw)} matches)`;
 }
 
@@ -674,10 +742,12 @@ function rankMeasureText(city) {
 function legendMaxText() {
   if (!activePair) {
     const max = ranges[activeClusterId]?.metricMax ?? 0;
+    if (isGravityLayer(activeClusterId)) return `${formatNumber(max, 1)} gravity`;
     if (isPreset(activeClusterId)) return `${formatNumber(max, 1)} index`;
     return baselineOrganizations(cities[0]) ? `${formatNumber(max, 1)} / 10k` : formatNumber(max);
   }
   const max = ranges[activeClusterId]?.metricMax ?? 0;
+  if (isGravityLayer(activeClusterId)) return `${formatNumber(max, 1)} gravity`;
   if (isPreset(activeClusterId)) return `${formatNumber(max, 1)} index`;
   return baselineOrganizations(cities[0]) ? `${formatNumber(max, 1)} / 10k` : formatNumber(max);
 }
@@ -1008,7 +1078,9 @@ function renderSelection() {
   const meta = getSelectionMeta();
   const selectedCity = cityByName.get(selectedCityName) ?? topCities()[0];
 
-  els.mapTitle.textContent = activePair ? `${clusterById.get(activeClusterId).label} + ${clusterById.get(activePair[1]).label}` : `${meta.title} Density`;
+  els.mapTitle.textContent = activePair
+    ? `${clusterById.get(activeClusterId).label} + ${clusterById.get(activePair[1]).label}`
+    : isGravityLayer(activeClusterId) ? meta.title : `${meta.title} Density`;
   els.legendRow.hidden = Boolean(activePair);
   els.legendHigh.textContent = legendMaxText();
   els.pairLegend.hidden = !activePair;
@@ -1146,11 +1218,23 @@ facet:locations.city.name`;
 function buildLayerQuery(layerId) {
   const layer = clusterById.get(layerId);
   if (layer?.components?.length) {
+    if (layer.scoreMode === "gravity") {
+      return `# ${layer.label} is a weighted gravity composite.
+# For each component, combine raw city footprint, density per 10k indexed orgs,
+# and their geometric blend; then apply the component weights.
+
+${layer.components.map((componentId) => `# ${clusterById.get(componentId).label}\n${dqlForSignal(clusterById.get(componentId))}`).join("\n\n")}`;
+    }
+
     return `# ${layer.label} is an equal-weight composite index.
 # Run each component facet, convert each city to density per 10k indexed orgs,
 # scale each component to 0-1 across Bay Area cities, then average.
 
 ${layer.components.map((componentId) => `# ${clusterById.get(componentId).label}\n${dqlForSignal(clusterById.get(componentId))}`).join("\n\n")}`;
+  }
+  if (layer?.scoreMode === "gravity") {
+    return `# ${layer.label} blends raw city footprint with density per 10k indexed orgs.
+${dqlForSignal(layer)}`;
   }
   return dqlForSignal(layer);
 }
