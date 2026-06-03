@@ -203,6 +203,10 @@ select {
   font-weight: 760;
 }
 
+.legend-row[hidden] {
+  display: none;
+}
+
 .gradient-bar {
   height: 9px;
   border: 1px solid rgba(23, 33, 36, 0.08);
@@ -210,24 +214,46 @@ select {
   background: linear-gradient(90deg, rgba(47, 127, 182, 0.34), #5eb7cf, #d7e679, #f3b24d, #e35f42, #8e1f74);
 }
 
-.contour-legend {
+.pair-legend {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
+  gap: 8px 10px;
   margin-top: 8px;
   color: var(--muted);
   font-size: 0.72rem;
   font-weight: 760;
 }
 
-.contour-legend[hidden] {
+.pair-legend[hidden] {
   display: none;
 }
 
-.contour-swatch {
-  width: 34px;
-  height: 0;
-  border-top: 2px solid rgba(23, 33, 36, 0.38);
+.pair-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 0;
+}
+
+.pair-swatch {
+  width: 18px;
+  height: 10px;
+  flex: 0 0 auto;
+  border: 1px solid rgba(23, 33, 36, 0.12);
+  border-radius: 999px;
+}
+
+.pair-swatch.primary {
+  background: #e46f4e;
+}
+
+.pair-swatch.secondary {
+  background: #327cbf;
+}
+
+.pair-swatch.overlap {
+  background: #7b1f8e;
 }
 
 .heat-canvas {

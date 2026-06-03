@@ -25,13 +25,13 @@
           <select id="scaleSelect" class="select-control scale-control" aria-label="Color scale" title="Color scale"></select>
 
           <div class="pair-fields" id="pairFields" hidden>
-            <span aria-hidden="true">contour</span>
-            <select id="secondaryClusterSelect" class="select-control" aria-label="Contour layer"></select>
+            <span aria-hidden="true">blend</span>
+            <select id="secondaryClusterSelect" class="select-control" aria-label="Second layer"></select>
           </div>
 
           <div class="mode-control" aria-label="Map mode">
             <button class="round-button active" id="singleMode" type="button" title="Single signal" aria-label="Single signal">1</button>
-            <button class="round-button" id="pairMode" type="button" title="Heat plus contours" aria-label="Heat plus contours">2</button>
+            <button class="round-button" id="pairMode" type="button" title="Blend two layers" aria-label="Blend two layers">2</button>
           </div>
 
           <button class="round-button" id="detailsToggle" type="button" title="Details" aria-label="Details">i</button>
@@ -40,14 +40,15 @@
 
       <div class="map-legend" aria-label="Density legend">
         <strong id="mapTitle">Kumon Gravity</strong>
-        <div class="legend-row">
+        <div class="legend-row" id="legendRow">
           <span>0</span>
           <div class="gradient-bar"></div>
           <span id="legendHigh">max</span>
         </div>
-        <div class="contour-legend" id="contourLegend" hidden>
-          <span class="contour-swatch"></span>
-          <span id="contourLabel">Contours</span>
+        <div class="pair-legend" id="pairLegend" hidden>
+          <span class="pair-chip"><span class="pair-swatch primary"></span><span id="pairPrimaryLabel">First</span></span>
+          <span class="pair-chip"><span class="pair-swatch secondary"></span><span id="pairSecondaryLabel">Second</span></span>
+          <span class="pair-chip"><span class="pair-swatch overlap"></span><span>Both</span></span>
         </div>
       </div>
 

@@ -29,7 +29,7 @@ Preset layers are equal-weight indexes built from component densities:
 
 The DQL panel in the UI shows the intended Diffbot handoff: facet each signal by Bay Area city, then compute densities and pairwise correlations from those city distributions.
 
-The default UI is intentionally sparse: density is conveyed by a weather-map-style heat gradient, subtle contour lines, and a small legend. In pair mode, the primary layer is drawn as heat and the secondary layer is drawn as darker contour lines. Exact counts, rankings, pairings, correlations, and DQL are tucked into the `i` details drawer or map popups.
+The default UI is intentionally sparse: density is conveyed by a weather-map-style heat gradient, subtle contour lines, and a small legend. In pair mode, the first layer is orange, the second layer is blue, and purple marks places where both layers are strong. Exact counts, rankings, pairings, correlations, and DQL are tucked into the `i` details drawer or map popups.
 
 To inspect generated DQL without spending API credits:
 

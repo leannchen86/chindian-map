@@ -394,9 +394,11 @@ const els = {
   detailDrawer: document.querySelector("#detailDrawer"),
   realMap: document.querySelector("#realMap"),
   mapTitle: document.querySelector("#mapTitle"),
+  legendRow: document.querySelector("#legendRow"),
   legendHigh: document.querySelector("#legendHigh"),
-  contourLegend: document.querySelector("#contourLegend"),
-  contourLabel: document.querySelector("#contourLabel"),
+  pairLegend: document.querySelector("#pairLegend"),
+  pairPrimaryLabel: document.querySelector("#pairPrimaryLabel"),
+  pairSecondaryLabel: document.querySelector("#pairSecondaryLabel"),
   selectionTitle: document.querySelector("#selectionTitle"),
   currentRead: document.querySelector("#currentRead"),
   currentReadBody: document.querySelector("#currentReadBody"),
@@ -465,7 +467,7 @@ function baseScore(city) {
   return scaledMeasure(city, activeClusterId);
 }
 
-function contourScore(city) {
+function secondaryScore(city) {
   if (!activePair) return null;
   return scaledMeasure(city, activePair[1]);
 }
@@ -532,6 +534,23 @@ function heatColor(value) {
   const lower = palette[Math.max(0, palette.indexOf(upper) - 1)];
   const localT = upper.stop === lower.stop ? 0 : (t - lower.stop) / (upper.stop - lower.stop);
   return lower.color.map((channel, index) => Math.round(channel + (upper.color[index] - channel) * localT));
+}
+
+function bivariateColor(primary, secondary) {
+  const warm = [228, 111, 78];
+  const blue = [50, 124, 191];
+  const purple = [123, 31, 142];
+  const overlap = Math.min(primary, secondary);
+  const primaryOnly = Math.max(0, primary - secondary);
+  const secondaryOnly = Math.max(0, secondary - primary);
+  const total = primaryOnly + secondaryOnly + overlap;
+  if (!total) return [112, 183, 202];
+
+  return warm.map((channel, index) => Math.round((
+    channel * primaryOnly +
+    blue[index] * secondaryOnly +
+    purple[index] * overlap
+  ) / total));
 }
 
 function contourPoint(level, a, b, ax, ay, bx, by) {
@@ -649,7 +668,7 @@ function selectedMeasureLine(city) {
 
 function rankMeasureText(city) {
   if (!activePair) return metricText(city, activeClusterId);
-  return `H ${metricShort(city, activePair[0])} / C ${metricShort(city, activePair[1])}`;
+  return `${metricShort(city, activePair[0])} | ${metricShort(city, activePair[1])}`;
 }
 
 function legendMaxText() {
@@ -681,11 +700,11 @@ function getSelectionMeta() {
   const second = clusterById.get(b);
   const label = pairLabels[pairKey(a, b)];
   return {
-    title: label?.title ?? `${first.label} heat + ${second.label} contours`,
-    copy: label?.body ?? `${first.label} is drawn as the heat field; ${second.label} is drawn as contour lines.`,
+    title: label?.title ?? `${first.label} + ${second.label}`,
+    copy: label?.body ?? `${first.label} is orange, ${second.label} is blue, and purple marks places where both are strong.`,
     color: first.color,
     queryCluster: first,
-    pairTitle: `${first.label} heat + ${second.label} contours`,
+    pairTitle: `${first.label} + ${second.label}`,
     body: label?.body,
   };
 }
@@ -774,9 +793,9 @@ function createHeatLayer() {
       map.off("move zoom resize zoomend moveend", this._reset, this);
       this._canvas.remove();
     },
-    setData(points, contourPoints = null) {
+    setData(points, secondaryPoints = null) {
       this._points = points;
-      this._contourPoints = contourPoints;
+      this._secondaryPoints = secondaryPoints;
       this._reset();
       return this;
     },
@@ -804,14 +823,14 @@ function createHeatLayer() {
       const sampleWidth = Math.ceil(width / cell);
       const sampleHeight = Math.ceil(height / cell);
 
-      const sampleField = (inputPoints, shouldPaint) => {
+      const sampleField = (inputPoints) => {
         const projectedPoints = inputPoints.map((point) => ({
           ...point,
           pixel: this._map.latLngToContainerPoint([point.lat, point.lon]),
         }));
         const field = new Float32Array(sampleWidth * sampleHeight);
         field.fill(Number.NaN);
-        const imageData = shouldPaint ? new ImageData(sampleWidth, sampleHeight) : null;
+        const fades = new Float32Array(sampleWidth * sampleHeight);
 
         for (let sampleY = 0; sampleY < sampleHeight; sampleY += 1) {
           for (let sampleX = 0; sampleX < sampleWidth; sampleX += 1) {
@@ -835,39 +854,58 @@ function createHeatLayer() {
 
             const interpolated = Math.max(0, Math.min(1, weighted / totalWeight));
             const visualValue = scaleValue(interpolated);
-            field[sampleY * sampleWidth + sampleX] = visualValue;
-
-            if (imageData) {
-              const fade = nearest <= fadeStart
-                ? 1
-                : Math.max(0, (influenceRadius - nearest) / (influenceRadius - fadeStart));
-              const color = heatColor(visualValue);
-              const alpha = (0.22 + visualValue * 0.64) * fade;
-              const index = (sampleY * sampleWidth + sampleX) * 4;
-              imageData.data[index] = color[0];
-              imageData.data[index + 1] = color[1];
-              imageData.data[index + 2] = color[2];
-              imageData.data[index + 3] = Math.round(alpha * 255);
-            }
+            const fieldIndex = sampleY * sampleWidth + sampleX;
+            field[fieldIndex] = visualValue;
+            fades[fieldIndex] = nearest <= fadeStart
+              ? 1
+              : Math.max(0, (influenceRadius - nearest) / (influenceRadius - fadeStart));
           }
         }
 
-        return { field, imageData };
+        return { field, fades };
       };
 
       const offscreen = document.createElement("canvas");
       offscreen.width = sampleWidth;
       offscreen.height = sampleHeight;
       const offscreenContext = offscreen.getContext("2d");
-      const heatSample = sampleField(points, true);
-      const contourPoints = this._contourPoints?.length ? this._contourPoints : points;
-      const contourSample = contourPoints === points ? heatSample : sampleField(contourPoints, false);
+      const heatSample = sampleField(points);
+      const secondaryPoints = this._secondaryPoints?.length ? this._secondaryPoints : null;
+      const secondarySample = secondaryPoints ? sampleField(secondaryPoints) : null;
+      const imageData = new ImageData(sampleWidth, sampleHeight);
+
+      for (let index = 0; index < heatSample.field.length; index += 1) {
+        let primary = Number.isFinite(heatSample.field[index]) ? heatSample.field[index] : 0;
+        let secondary = secondarySample && Number.isFinite(secondarySample.field[index]) ? secondarySample.field[index] : 0;
+        if (secondarySample) {
+          primary = Math.max(0, (primary - 0.22) / 0.78);
+          secondary = Math.max(0, (secondary - 0.22) / 0.78);
+        }
+        if (!primary && !secondary) continue;
+
+        const color = secondarySample ? bivariateColor(primary, secondary) : heatColor(primary);
+        const strength = secondarySample ? Math.max(primary, secondary) : primary;
+        const overlap = secondarySample ? Math.min(primary, secondary) : 0;
+        const fade = secondarySample
+          ? Math.max(heatSample.fades[index] ?? 0, secondarySample.fades[index] ?? 0)
+          : heatSample.fades[index];
+        const alpha = secondarySample
+          ? (0.03 + strength ** 1.35 * 0.62 + overlap ** 1.6 * 0.34) * fade
+          : (0.2 + strength * 0.5) * fade;
+        const pixelIndex = index * 4;
+        imageData.data[pixelIndex] = color[0];
+        imageData.data[pixelIndex + 1] = color[1];
+        imageData.data[pixelIndex + 2] = color[2];
+        imageData.data[pixelIndex + 3] = Math.round(Math.min(0.9, alpha) * 255);
+      }
 
       ctx.globalCompositeOperation = "source-over";
-      offscreenContext.putImageData(heatSample.imageData, 0, 0);
+      offscreenContext.putImageData(imageData, 0, 0);
       ctx.imageSmoothingEnabled = true;
       ctx.drawImage(offscreen, 0, 0, width, height);
-      drawContourLines(ctx, contourSample.field, sampleWidth, sampleHeight, cell, contourPoints !== points);
+      if (!secondarySample) {
+        drawContourLines(ctx, heatSample.field, sampleWidth, sampleHeight, cell);
+      }
     },
   });
   return new HeatLayer();
@@ -876,7 +914,7 @@ function createHeatLayer() {
 function popupHtml(city, value, meta) {
   const signalName = activePair ? meta.pairTitle : meta.title;
   const popupScore = activePair
-    ? `Heat ${metricText(city, activePair[0])}; contour ${metricText(city, activePair[1])}`
+    ? `Orange ${metricText(city, activePair[0])}; blue ${metricText(city, activePair[1])}`
     : metricText(city, activeClusterId);
   return `
     <div class="map-popup-title">
@@ -905,14 +943,14 @@ function renderMap() {
     lon: city.lon,
     score: baseScore(city),
   }));
-  const contourPoints = activePair
+  const secondaryPoints = activePair
     ? cities.map((city) => ({
       lat: city.lat,
       lon: city.lon,
-      score: contourScore(city),
+      score: secondaryScore(city),
     }))
     : null;
-  heatLayer.setData(heatPoints, contourPoints);
+  heatLayer.setData(heatPoints, secondaryPoints);
 
   for (const city of cities) {
     const value = score(city);
@@ -970,13 +1008,15 @@ function renderSelection() {
   const meta = getSelectionMeta();
   const selectedCity = cityByName.get(selectedCityName) ?? topCities()[0];
 
-  els.mapTitle.textContent = activePair ? `${clusterById.get(activeClusterId).label} Heat` : `${meta.title} Density`;
+  els.mapTitle.textContent = activePair ? `${clusterById.get(activeClusterId).label} + ${clusterById.get(activePair[1]).label}` : `${meta.title} Density`;
+  els.legendRow.hidden = Boolean(activePair);
   els.legendHigh.textContent = legendMaxText();
-  els.contourLegend.hidden = !activePair;
+  els.pairLegend.hidden = !activePair;
   if (activePair) {
-    els.contourLabel.textContent = `${clusterById.get(activePair[1]).label} contours`;
+    els.pairPrimaryLabel.textContent = clusterById.get(activeClusterId).label;
+    els.pairSecondaryLabel.textContent = clusterById.get(activePair[1]).label;
   }
-  els.selectionTitle.textContent = activePair ? `${clusterById.get(activeClusterId).label} heat + ${clusterById.get(activePair[1]).label} contours` : meta.title;
+  els.selectionTitle.textContent = activePair ? `${clusterById.get(activeClusterId).label} orange + ${clusterById.get(activePair[1]).label} blue` : meta.title;
   els.currentRead.textContent = activePair
     ? selectedCity.name
     : `${selectedCity.name}: ${metricText(selectedCity, activeClusterId)}`;
@@ -1119,7 +1159,8 @@ function buildQuery() {
   if (activePair) {
     const a = clusterById.get(activeClusterId);
     const b = clusterById.get(activePair[1]);
-    return `# Pair mode draws ${a.label} as heat and ${b.label} as contour lines.
+    return `# Pair mode draws ${a.label} in orange, ${b.label} in blue,
+# and purple where both layers are strong.
 
 ${buildLayerQuery(activeClusterId)}
 
