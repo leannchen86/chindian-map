@@ -134,7 +134,9 @@ select {
 
 .pair-fields span {
   color: var(--muted);
+  font-size: 0.72rem;
   font-weight: 820;
+  text-transform: uppercase;
 }
 
 .select-control {
@@ -206,6 +208,26 @@ select {
   border: 1px solid rgba(23, 33, 36, 0.08);
   border-radius: 999px;
   background: linear-gradient(90deg, rgba(47, 127, 182, 0.34), #5eb7cf, #d7e679, #f3b24d, #e35f42, #8e1f74);
+}
+
+.contour-legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  font-weight: 760;
+}
+
+.contour-legend[hidden] {
+  display: none;
+}
+
+.contour-swatch {
+  width: 34px;
+  height: 0;
+  border-top: 2px solid rgba(23, 33, 36, 0.38);
 }
 
 .heat-canvas {

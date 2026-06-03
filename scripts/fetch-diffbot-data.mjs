@@ -52,6 +52,12 @@ const clusters = [
     terms: ["chai", "dosa", "chaat", "biryani", "Indian restaurant", "South Indian", "Gujarati", "Punjabi"],
   },
   {
+    id: "chineseFood",
+    type: "Organization",
+    field: "description",
+    terms: ["Chinese restaurant", "dim sum", "hot pot", "Sichuan", "Cantonese", "Taiwanese restaurant", "Shanghainese", "noodle house"],
+  },
+  {
     id: "indoChinese",
     type: "Organization",
     field: "description",
@@ -67,7 +73,7 @@ const clusters = [
     id: "ai",
     type: "Organization",
     field: "description",
-    terms: ["artificial intelligence", "machine learning", "LLM", "startup", "venture capital", "accelerator", "software company"],
+    terms: ["artificial intelligence", "machine learning", "LLM", "computer vision", "natural language processing", "AI startup", "software company"],
   },
   {
     id: "weekend",
@@ -76,22 +82,40 @@ const clusters = [
     terms: ["Chinese School", "Mandarin School", "Hindi School", "Tamil School", "Telugu School", "Bharatanatyam", "tabla", "piano", "chess"],
   },
   {
-    id: "festivals",
+    id: "language",
     type: "Organization",
     field: "description",
-    terms: ["Diwali", "Holi", "Navratri", "Lunar New Year", "Chinese New Year", "Mid-Autumn", "Dragon Boat", "cultural festival"],
-  },
-  {
-    id: "weddings",
-    type: "Organization",
-    field: "description",
-    terms: ["wedding planner", "banquet hall", "mehndi", "henna", "mandap", "sari", "lehenga", "qipao", "cheongsam", "vegetarian catering"],
+    terms: ["language school", "Mandarin School", "Chinese language", "Cantonese", "Hindi class", "Tamil class", "Telugu class", "Korean school", "Japanese school"],
   },
   {
     id: "sports",
     type: "Organization",
     field: "description",
     terms: ["badminton", "table tennis", "cricket", "pickleball", "chess club", "ping pong"],
+  },
+  {
+    id: "vc",
+    type: "Organization",
+    field: "description",
+    terms: ["venture capital", "startup accelerator", "incubator", "seed fund", "angel investor", "venture studio"],
+  },
+  {
+    id: "meetups",
+    type: "Organization",
+    field: "description",
+    terms: ["meetup", "hackathon", "networking event", "founder community", "startup community", "developer community"],
+  },
+  {
+    id: "coworking",
+    type: "Organization",
+    field: "description",
+    terms: ["coworking", "co-working", "shared office", "flexible workspace", "WeWork", "Regus", "Industrious"],
+  },
+  {
+    id: "research",
+    type: "Organization",
+    field: "description",
+    terms: ["university", "research institute", "research center", "laboratory", "Stanford", "UC Berkeley", "NASA Ames"],
   },
 ];
 

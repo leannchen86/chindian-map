@@ -4,7 +4,7 @@ const BAY_AREA_FILTER =
 const clusters = [
   {
     id: "kumon",
-    label: "Kumon Gravity",
+    label: "Tutoring / Test Prep",
     color: "#e26f5a",
     copy: "Tutoring, test prep, coding schools, and the unmistakable scent of Saturday morning optimization.",
     labelForHigh: "After-School Pressure Zone",
@@ -22,11 +22,20 @@ const clusters = [
   },
   {
     id: "chai",
-    label: "Chai / Dosa Coverage",
+    label: "Indian Restaurants",
     color: "#d49a3a",
     copy: "Indian food, chai spots, dosa places, chaat counters, and parental dinner diplomacy.",
     labelForHigh: "Masala Logistics Hub",
     dqlTerms: '"chai","dosa","chaat","biryani","Indian restaurant","South Indian","Gujarati","Punjabi"',
+    queryType: "Organization",
+  },
+  {
+    id: "chineseFood",
+    label: "Chinese Restaurants",
+    color: "#cc6e42",
+    copy: "Dim sum, hot pot, noodle houses, Sichuan, Cantonese, Taiwanese, and the other half of the dinner map.",
+    labelForHigh: "Hot Pot / Dim Sum Belt",
+    dqlTerms: '"Chinese restaurant","dim sum","hot pot","Sichuan","Cantonese","Taiwanese restaurant","Shanghainese","noodle house"',
     queryType: "Organization",
   },
   {
@@ -40,7 +49,7 @@ const clusters = [
   },
   {
     id: "grocery",
-    label: "Grocery Triangle",
+    label: "Asian Groceries",
     color: "#6b8f71",
     copy: "Asian grocery errand infrastructure: 99 Ranch, Marina, India Cash & Carry, Patel Brothers, and friends.",
     labelForHigh: "Parent Errand Stack",
@@ -53,7 +62,7 @@ const clusters = [
     color: "#315f8f",
     copy: "AI companies, software orgs, accelerators, venture-adjacent offices, and places where people say agentic out loud.",
     labelForHigh: "Seed Round Weather System",
-    dqlTerms: '"artificial intelligence","machine learning","LLM","startup","venture capital","accelerator","software company"',
+    dqlTerms: '"artificial intelligence","machine learning","LLM","computer vision","natural language processing","AI startup","software company"',
     queryType: "Organization",
   },
   {
@@ -66,33 +75,93 @@ const clusters = [
     queryType: "Organization",
   },
   {
-    id: "festivals",
-    label: "Festival Overlap",
-    color: "#c48d28",
-    copy: "Diwali, Holi, Navratri, Lunar New Year, Mid-Autumn, dragon boats, and the civic calendar doing crossover episodes.",
-    labelForHigh: "Shared Calendar Density",
-    dqlTerms: '"Diwali","Holi","Navratri","Lunar New Year","Chinese New Year","Mid-Autumn","Dragon Boat","cultural festival"',
-    queryType: "Organization",
-  },
-  {
-    id: "weddings",
-    label: "Wedding Vendors",
-    color: "#b75f7d",
-    copy: "Banquet halls, mehndi, mandaps, vegetarian catering, photographers, and the highest-stakes family logistics stack.",
-    labelForHigh: "Banquet Feasibility Zone",
-    dqlTerms: '"wedding planner","banquet hall","mehndi","henna","mandap","sari","lehenga","qipao","cheongsam","vegetarian catering"',
+    id: "language",
+    label: "Language Schools",
+    color: "#a96549",
+    copy: "Mandarin, Cantonese, Hindi, Tamil, Telugu, Korean, Japanese, and the general engineering of bilingual weekends.",
+    labelForHigh: "Language-School Weather",
+    dqlTerms: '"language school","Mandarin School","Chinese language","Cantonese","Hindi class","Tamil class","Telugu class","Korean school","Japanese school"',
     queryType: "Organization",
   },
   {
     id: "sports",
-    label: "Badminton / Cricket",
+    label: "Badminton / Cricket / TT",
     color: "#517a50",
     copy: "Badminton, cricket, table tennis, pickleball, and chess clubs: the underrated social graph.",
     labelForHigh: "Weekend League Diplomacy",
     dqlTerms: '"badminton","table tennis","cricket","pickleball","chess club","ping pong"',
     queryType: "Organization",
   },
+  {
+    id: "vc",
+    label: "VC / Accelerators",
+    color: "#476da2",
+    copy: "Venture firms, accelerators, incubators, seed funds, angel groups, and the institutions around startup weather.",
+    labelForHigh: "Capital Pressure System",
+    dqlTerms: '"venture capital","startup accelerator","incubator","seed fund","angel investor","venture studio"',
+    queryType: "Organization",
+  },
+  {
+    id: "meetups",
+    label: "Meetups / Events Orgs",
+    color: "#5c73a5",
+    copy: "Meetups, hackathons, networking events, founder communities, and developer communities.",
+    labelForHigh: "Networking Front",
+    dqlTerms: '"meetup","hackathon","networking event","founder community","startup community","developer community"',
+    queryType: "Organization",
+  },
+  {
+    id: "coworking",
+    label: "Coworking Spaces",
+    color: "#6a7893",
+    copy: "Coworking, flexible workspace, shared offices, and the places where the laptop is a lease.",
+    labelForHigh: "Shared-Desk Front",
+    dqlTerms: '"coworking","co-working","shared office","flexible workspace","WeWork","Regus","Industrious"',
+    queryType: "Organization",
+  },
+  {
+    id: "research",
+    label: "University / Research",
+    color: "#4f8797",
+    copy: "Universities, research institutes, labs, and the academic gravity underneath the startup layer.",
+    labelForHigh: "Research Gravity Well",
+    dqlTerms: '"university","research institute","research center","laboratory","Stanford","UC Berkeley","NASA Ames"',
+    queryType: "Organization",
+  },
 ];
+
+const presets = [
+  {
+    id: "saturday",
+    label: "Saturday Route Optimization",
+    components: ["kumon", "weekend", "language", "grocery", "sports"],
+    copy: "Tutoring, language school, Asian groceries, and racket sports fused into one suburban logistics index.",
+    labelForHigh: "Maximum Saturday Compression",
+  },
+  {
+    id: "foodCrossover",
+    label: "Food Crossover",
+    components: ["boba", "chai", "chineseFood", "indoChinese", "grocery"],
+    copy: "Boba, Indian food, Chinese restaurants, Indo-Chinese menus, and grocery infrastructure.",
+    labelForHigh: "Dinner-Plan Probability Field",
+  },
+  {
+    id: "techSocial",
+    label: "Tech / Social Gravity",
+    components: ["ai", "vc", "meetups", "coworking", "research"],
+    copy: "AI, venture, meetups, coworking, and university/research gravity.",
+    labelForHigh: "Founder Weather System",
+  },
+  {
+    id: "foodOverlap",
+    label: "Indian x Chinese Food",
+    components: ["chai", "chineseFood", "boba", "indoChinese"],
+    copy: "Indian restaurants, Chinese restaurants, boba, and the literal Indo-Chinese overlap layer.",
+    labelForHigh: "Cross-Cuisine Pressure Zone",
+  },
+];
+
+const layers = [...presets, ...clusters];
 
 let cities = [
   {
@@ -210,6 +279,14 @@ const pairLabels = {
     title: "After-School Caffeine Corridor",
     body: "Milk tea and tutoring show up together where the school-night logistics are most optimized.",
   },
+  "boba|chai": {
+    title: "Milk Tea Meets Masala",
+    body: "Boba density and Indian restaurant coverage mark the casual food-social layer of the crossover map.",
+  },
+  "chai|chineseFood": {
+    title: "Dinner Diplomacy Front",
+    body: "Indian and Chinese restaurant coverage move together where group dinner planning has maximum optionality.",
+  },
   "chai|ai": {
     title: "Seed Round Over Masala Dosa",
     body: "Indian food coverage and startup gravity overlap in the places where dinner can become a pitch deck.",
@@ -218,13 +295,17 @@ const pairLabels = {
     title: "Parent Errand Stack",
     body: "Tutoring centers and grocery anchors cluster into the most efficient Saturday route possible.",
   },
-  "indoChinese|weddings": {
-    title: "Fusion Banquet Feasibility",
-    body: "The places with Indo-Chinese menus also tend to have enough event infrastructure to host the discourse in person.",
+  "chineseFood|indoChinese": {
+    title: "Schezwan Drift",
+    body: "Chinese restaurant infrastructure and Indo-Chinese menu language trace the places where fusion stops being theoretical.",
   },
   "sports|weekend": {
     title: "Saturday Was Never Free",
     body: "Weekend schools and racket sports form the extracurricular backbone of suburban Asian logistics.",
+  },
+  "language|weekend": {
+    title: "Bilingual Saturday Layer",
+    body: "Language schools and weekend-school signals overlap where Saturday becomes a curriculum.",
   },
   "chai|grocery": {
     title: "Masala Supply Chain",
@@ -233,6 +314,14 @@ const pairLabels = {
   "boba|ai": {
     title: "Founder Hydration Layer",
     body: "Caffeine density follows the office clusters where people are most likely to say they are still pre-launch.",
+  },
+  "ai|vc": {
+    title: "Pitch Deck Weather",
+    body: "AI and capital infrastructure overlap where the startup layer is not just companies, but an ecosystem.",
+  },
+  "coworking|meetups": {
+    title: "Laptop Social Layer",
+    body: "Coworking spaces and meetup infrastructure capture the places where work and social graphs blur.",
   },
 };
 
@@ -244,14 +333,14 @@ const scaleOptions = [
   { id: "exp", label: "Exp" },
 ];
 
-let activeClusterId = "kumon";
+let activeClusterId = "saturday";
 let activePair = null;
 let activeScaleId = "linear";
 let selectedCityName = null;
 let dataModeLabel = "seed data";
 let popupCityName = null;
 
-const clusterById = new Map(clusters.map((cluster) => [cluster.id, cluster]));
+const clusterById = new Map(layers.map((cluster) => [cluster.id, cluster]));
 let cityByName = new Map(cities.map((city) => [city.name, city]));
 let ranges = {};
 
@@ -265,8 +354,22 @@ function recomputeRanges() {
     ranges[cluster.id] = {
       min: Math.min(...rawValues),
       max: Math.max(...rawValues),
+      metricMin: Math.min(...densityValues),
+      metricMax: Math.max(...densityValues),
       densityMin: Math.min(...densityValues),
       densityMax: Math.max(...densityValues),
+    };
+  }
+
+  for (const preset of presets) {
+    const metricValues = cities.map((city) => layerMeasure(city, preset.id));
+    ranges[preset.id] = {
+      min: Math.min(...metricValues),
+      max: Math.max(...metricValues),
+      metricMin: Math.min(...metricValues),
+      metricMax: Math.max(...metricValues),
+      densityMin: Math.min(...metricValues),
+      densityMax: Math.max(...metricValues),
     };
   }
 }
@@ -292,6 +395,8 @@ const els = {
   realMap: document.querySelector("#realMap"),
   mapTitle: document.querySelector("#mapTitle"),
   legendHigh: document.querySelector("#legendHigh"),
+  contourLegend: document.querySelector("#contourLegend"),
+  contourLabel: document.querySelector("#contourLabel"),
   selectionTitle: document.querySelector("#selectionTitle"),
   currentRead: document.querySelector("#currentRead"),
   currentReadBody: document.querySelector("#currentReadBody"),
@@ -317,36 +422,61 @@ function densityMeasure(city, clusterId) {
   return (rawMeasure(city, clusterId) / baseline) * 10000;
 }
 
-function norm(city, clusterId) {
-  const { min, max } = ranges[clusterId];
-  if (max === min) return 0;
-  return (rawMeasure(city, clusterId) - min) / (max - min);
+function isPreset(layerId) {
+  return Boolean(clusterById.get(layerId)?.components);
 }
 
-function scaledMeasure(city, clusterId) {
-  const max = ranges[clusterId]?.densityMax ?? ranges[clusterId]?.max ?? 0;
+function componentScore(city, clusterId) {
+  const max = ranges[clusterId]?.densityMax ?? ranges[clusterId]?.metricMax ?? 0;
   if (!max) return 0;
   return densityMeasure(city, clusterId) / max;
 }
 
+function layerMeasure(city, layerId) {
+  const layer = clusterById.get(layerId);
+  if (layer?.components?.length) {
+    const averageComponentScore = average(layer.components.map((componentId) => componentScore(city, componentId)));
+    return averageComponentScore * 100;
+  }
+  return densityMeasure(city, layerId);
+}
+
+function norm(city, clusterId) {
+  const { metricMin: min, metricMax: max } = ranges[clusterId];
+  if (max === min) return 0;
+  return (layerMeasure(city, clusterId) - min) / (max - min);
+}
+
+function scaledMeasure(city, layerId) {
+  const max = ranges[layerId]?.metricMax ?? 0;
+  if (!max) return 0;
+  return layerMeasure(city, layerId) / max;
+}
+
 function pairMeasure(city, a, b) {
-  return Math.sqrt(densityMeasure(city, a) * densityMeasure(city, b));
+  return Math.min(scaledMeasure(city, a), scaledMeasure(city, b)) * 100;
 }
 
 function pairScore(city, a, b) {
-  const values = cities.map((candidate) => pairMeasure(candidate, a, b));
-  const max = Math.max(...values);
-  if (!max) return 0;
-  return pairMeasure(city, a, b) / max;
+  return Math.min(scaledMeasure(city, a), scaledMeasure(city, b));
 }
 
 function baseScore(city) {
-  if (activePair) return pairScore(city, activePair[0], activePair[1]);
   return scaledMeasure(city, activeClusterId);
+}
+
+function contourScore(city) {
+  if (!activePair) return null;
+  return scaledMeasure(city, activePair[1]);
 }
 
 function score(city) {
   return scaleValue(baseScore(city));
+}
+
+function rankScore(city) {
+  if (!activePair) return baseScore(city);
+  return pairScore(city, activePair[0], activePair[1]);
 }
 
 function pearson(aId, bId) {
@@ -428,11 +558,11 @@ function contourIntersections(level, corners) {
   });
 }
 
-function drawContourLines(ctx, field, sampleWidth, sampleHeight, cell) {
+function drawContourLines(ctx, field, sampleWidth, sampleHeight, cell, emphasized = false) {
   ctx.save();
   ctx.globalCompositeOperation = "source-over";
-  ctx.strokeStyle = "rgba(23, 33, 36, 0.16)";
-  ctx.lineWidth = 0.8;
+  ctx.strokeStyle = emphasized ? "rgba(23, 33, 36, 0.34)" : "rgba(23, 33, 36, 0.16)";
+  ctx.lineWidth = emphasized ? 1.15 : 0.8;
 
   for (const level of [0.28, 0.42, 0.56, 0.7, 0.84]) {
     ctx.beginPath();
@@ -474,7 +604,7 @@ function pairKey(a, b) {
 }
 
 function fallbackSecondCluster(primaryId) {
-  return clusters.find((cluster) => cluster.id !== primaryId)?.id ?? primaryId;
+  return layers.find((cluster) => cluster.id !== primaryId)?.id ?? primaryId;
 }
 
 function formatNumber(value, digits = 0) {
@@ -484,20 +614,31 @@ function formatNumber(value, digits = 0) {
   });
 }
 
-function metricText(city, clusterId) {
-  if (!baselineOrganizations(city)) return `${formatNumber(rawMeasure(city, clusterId))} matches`;
-  return `${formatNumber(densityMeasure(city, clusterId), 1)} / 10k orgs`;
+function metricText(city, layerId) {
+  if (isPreset(layerId)) return `${formatNumber(layerMeasure(city, layerId), 1)} index`;
+  if (!baselineOrganizations(city)) return `${formatNumber(rawMeasure(city, layerId))} matches`;
+  return `${formatNumber(densityMeasure(city, layerId), 1)} / 10k orgs`;
 }
 
-function metricShort(city, clusterId) {
-  if (!baselineOrganizations(city)) return formatNumber(rawMeasure(city, clusterId));
-  return formatNumber(densityMeasure(city, clusterId), 1);
+function metricShort(city, layerId) {
+  if (isPreset(layerId)) return formatNumber(layerMeasure(city, layerId), 1);
+  if (!baselineOrganizations(city)) return formatNumber(rawMeasure(city, layerId));
+  return formatNumber(densityMeasure(city, layerId), 1);
 }
 
-function clusterMeasureLine(city, clusterId) {
-  const raw = rawMeasure(city, clusterId);
+function componentMeasureLines(city, layerId) {
+  const layer = clusterById.get(layerId);
+  if (!layer?.components?.length) return [];
+  return layer.components.map((componentId) => `${clusterById.get(componentId).label}: ${clusterMeasureLine(city, componentId)}`);
+}
+
+function clusterMeasureLine(city, layerId) {
+  if (isPreset(layerId)) {
+    return `${metricText(city, layerId)} (${componentMeasureLines(city, layerId).join("; ")})`;
+  }
+  const raw = rawMeasure(city, layerId);
   if (!baselineOrganizations(city)) return `${formatNumber(raw)} matches`;
-  return `${metricText(city, clusterId)} (${formatNumber(raw)} matches)`;
+  return `${metricText(city, layerId)} (${formatNumber(raw)} matches)`;
 }
 
 function selectedMeasureLine(city) {
@@ -508,16 +649,18 @@ function selectedMeasureLine(city) {
 
 function rankMeasureText(city) {
   if (!activePair) return metricText(city, activeClusterId);
-  return `${metricShort(city, activePair[0])} x ${metricShort(city, activePair[1])}`;
+  return `H ${metricShort(city, activePair[0])} / C ${metricShort(city, activePair[1])}`;
 }
 
 function legendMaxText() {
   if (!activePair) {
-    const max = ranges[activeClusterId]?.densityMax ?? ranges[activeClusterId]?.max ?? 0;
+    const max = ranges[activeClusterId]?.metricMax ?? 0;
+    if (isPreset(activeClusterId)) return `${formatNumber(max, 1)} index`;
     return baselineOrganizations(cities[0]) ? `${formatNumber(max, 1)} / 10k` : formatNumber(max);
   }
-  const maxPair = Math.max(...cities.map((city) => pairMeasure(city, activePair[0], activePair[1])));
-  return baselineOrganizations(cities[0]) ? `${formatNumber(maxPair, 1)} / 10k` : formatNumber(Math.round(maxPair));
+  const max = ranges[activeClusterId]?.metricMax ?? 0;
+  if (isPreset(activeClusterId)) return `${formatNumber(max, 1)} index`;
+  return baselineOrganizations(cities[0]) ? `${formatNumber(max, 1)} / 10k` : formatNumber(max);
 }
 
 function getSelectionMeta() {
@@ -538,25 +681,36 @@ function getSelectionMeta() {
   const second = clusterById.get(b);
   const label = pairLabels[pairKey(a, b)];
   return {
-    title: label?.title ?? `${first.label} x ${second.label}`,
-    copy: label?.body ?? `Overlap score between ${first.label.toLowerCase()} and ${second.label.toLowerCase()}.`,
+    title: label?.title ?? `${first.label} heat + ${second.label} contours`,
+    copy: label?.body ?? `${first.label} is drawn as the heat field; ${second.label} is drawn as contour lines.`,
     color: first.color,
     queryCluster: first,
-    pairTitle: `${first.label} x ${second.label}`,
+    pairTitle: `${first.label} heat + ${second.label} contours`,
     body: label?.body,
   };
 }
 
-function fillSelect(select, options) {
-  const current = select.value;
-  select.innerHTML = "";
+function appendOptionGroup(select, label, options) {
+  if (!options.length) return;
+  const group = document.createElement("optgroup");
+  group.label = label;
   for (const cluster of options) {
     const option = document.createElement("option");
     option.value = cluster.id;
     option.textContent = cluster.label;
-    select.appendChild(option);
+    group.appendChild(option);
   }
-  if (options.some((cluster) => cluster.id === current)) {
+  select.appendChild(group);
+}
+
+function fillLayerSelect(select, excludedId = null) {
+  const current = select.value;
+  select.innerHTML = "";
+  const presetOptions = presets.filter((cluster) => cluster.id !== excludedId);
+  const signalOptions = clusters.filter((cluster) => cluster.id !== excludedId);
+  appendOptionGroup(select, "Presets", presetOptions);
+  appendOptionGroup(select, "Signals", signalOptions);
+  if (layers.some((cluster) => cluster.id === current && cluster.id !== excludedId)) {
     select.value = current;
   }
 }
@@ -574,8 +728,8 @@ function renderScaleControl() {
 }
 
 function renderClusterControls() {
-  fillSelect(els.clusterSelect, clusters);
-  fillSelect(els.secondaryClusterSelect, clusters.filter((cluster) => cluster.id !== activeClusterId));
+  fillLayerSelect(els.clusterSelect);
+  fillLayerSelect(els.secondaryClusterSelect, activeClusterId);
   els.clusterSelect.value = activeClusterId;
   els.pairFields.hidden = !activePair;
   if (activePair) {
@@ -620,9 +774,9 @@ function createHeatLayer() {
       map.off("move zoom resize zoomend moveend", this._reset, this);
       this._canvas.remove();
     },
-    setData(points, maxValue) {
+    setData(points, contourPoints = null) {
       this._points = points;
-      this._maxValue = maxValue;
+      this._contourPoints = contourPoints;
       this._reset();
       return this;
     },
@@ -644,63 +798,76 @@ function createHeatLayer() {
       const points = this._points ?? [];
       if (!points.length) return;
 
-      const projectedPoints = points.map((point) => ({
-        ...point,
-        pixel: this._map.latLngToContainerPoint([point.lat, point.lon]),
-      }));
       const cell = Math.max(4, Math.round(Math.min(width, height) / 150));
       const influenceRadius = Math.max(260, Math.min(width, height) * 0.48);
       const fadeStart = influenceRadius * 0.68;
       const sampleWidth = Math.ceil(width / cell);
       const sampleHeight = Math.ceil(height / cell);
+
+      const sampleField = (inputPoints, shouldPaint) => {
+        const projectedPoints = inputPoints.map((point) => ({
+          ...point,
+          pixel: this._map.latLngToContainerPoint([point.lat, point.lon]),
+        }));
+        const field = new Float32Array(sampleWidth * sampleHeight);
+        field.fill(Number.NaN);
+        const imageData = shouldPaint ? new ImageData(sampleWidth, sampleHeight) : null;
+
+        for (let sampleY = 0; sampleY < sampleHeight; sampleY += 1) {
+          for (let sampleX = 0; sampleX < sampleWidth; sampleX += 1) {
+            const x = (sampleX + 0.5) * cell;
+            const y = (sampleY + 0.5) * cell;
+            let weighted = 0;
+            let totalWeight = 0;
+            let nearest = Infinity;
+
+            for (const point of projectedPoints) {
+              const dx = x - point.pixel.x;
+              const dy = y - point.pixel.y;
+              const distance = Math.hypot(dx, dy);
+              nearest = Math.min(nearest, distance);
+              const weight = 1 / (distance * distance + 420);
+              weighted += point.score * weight;
+              totalWeight += weight;
+            }
+
+            if (!totalWeight || nearest > influenceRadius) continue;
+
+            const interpolated = Math.max(0, Math.min(1, weighted / totalWeight));
+            const visualValue = scaleValue(interpolated);
+            field[sampleY * sampleWidth + sampleX] = visualValue;
+
+            if (imageData) {
+              const fade = nearest <= fadeStart
+                ? 1
+                : Math.max(0, (influenceRadius - nearest) / (influenceRadius - fadeStart));
+              const color = heatColor(visualValue);
+              const alpha = (0.22 + visualValue * 0.64) * fade;
+              const index = (sampleY * sampleWidth + sampleX) * 4;
+              imageData.data[index] = color[0];
+              imageData.data[index + 1] = color[1];
+              imageData.data[index + 2] = color[2];
+              imageData.data[index + 3] = Math.round(alpha * 255);
+            }
+          }
+        }
+
+        return { field, imageData };
+      };
+
       const offscreen = document.createElement("canvas");
       offscreen.width = sampleWidth;
       offscreen.height = sampleHeight;
       const offscreenContext = offscreen.getContext("2d");
-      const imageData = offscreenContext.createImageData(sampleWidth, sampleHeight);
-      const field = new Float32Array(sampleWidth * sampleHeight);
-      field.fill(Number.NaN);
+      const heatSample = sampleField(points, true);
+      const contourPoints = this._contourPoints?.length ? this._contourPoints : points;
+      const contourSample = contourPoints === points ? heatSample : sampleField(contourPoints, false);
 
       ctx.globalCompositeOperation = "source-over";
-      for (let sampleY = 0; sampleY < sampleHeight; sampleY += 1) {
-        for (let sampleX = 0; sampleX < sampleWidth; sampleX += 1) {
-          const x = (sampleX + 0.5) * cell;
-          const y = (sampleY + 0.5) * cell;
-          let weighted = 0;
-          let totalWeight = 0;
-          let nearest = Infinity;
-
-          for (const point of projectedPoints) {
-            const dx = x - point.pixel.x;
-            const dy = y - point.pixel.y;
-            const distance = Math.hypot(dx, dy);
-            nearest = Math.min(nearest, distance);
-            const weight = 1 / (distance * distance + 420);
-            weighted += point.score * weight;
-            totalWeight += weight;
-          }
-
-          if (!totalWeight || nearest > influenceRadius) continue;
-
-          const interpolated = Math.max(0, Math.min(1, weighted / totalWeight));
-          const visualValue = scaleValue(interpolated);
-          field[sampleY * sampleWidth + sampleX] = visualValue;
-          const fade = nearest <= fadeStart
-            ? 1
-            : Math.max(0, (influenceRadius - nearest) / (influenceRadius - fadeStart));
-          const color = heatColor(visualValue);
-          const alpha = (0.22 + visualValue * 0.64) * fade;
-          const index = (sampleY * sampleWidth + sampleX) * 4;
-          imageData.data[index] = color[0];
-          imageData.data[index + 1] = color[1];
-          imageData.data[index + 2] = color[2];
-          imageData.data[index + 3] = Math.round(alpha * 255);
-        }
-      }
-      offscreenContext.putImageData(imageData, 0, 0);
+      offscreenContext.putImageData(heatSample.imageData, 0, 0);
       ctx.imageSmoothingEnabled = true;
       ctx.drawImage(offscreen, 0, 0, width, height);
-      drawContourLines(ctx, field, sampleWidth, sampleHeight, cell);
+      drawContourLines(ctx, contourSample.field, sampleWidth, sampleHeight, cell, contourPoints !== points);
     },
   });
   return new HeatLayer();
@@ -709,7 +876,7 @@ function createHeatLayer() {
 function popupHtml(city, value, meta) {
   const signalName = activePair ? meta.pairTitle : meta.title;
   const popupScore = activePair
-    ? `${metricText(city, activePair[0])} x ${metricText(city, activePair[1])}`
+    ? `Heat ${metricText(city, activePair[0])}; contour ${metricText(city, activePair[1])}`
     : metricText(city, activeClusterId);
   return `
     <div class="map-popup-title">
@@ -738,7 +905,14 @@ function renderMap() {
     lon: city.lon,
     score: baseScore(city),
   }));
-  heatLayer.setData(heatPoints);
+  const contourPoints = activePair
+    ? cities.map((city) => ({
+      lat: city.lat,
+      lon: city.lon,
+      score: contourScore(city),
+    }))
+    : null;
+  heatLayer.setData(heatPoints, contourPoints);
 
   for (const city of cities) {
     const value = score(city);
@@ -787,18 +961,22 @@ function renderMap() {
 
 function topCities(limit = 6) {
   return [...cities]
-    .sort((a, b) => baseScore(b) - baseScore(a))
+    .sort((a, b) => rankScore(b) - rankScore(a))
     .slice(0, limit)
-    .map((city) => ({ ...city, activeScore: baseScore(city) }));
+    .map((city) => ({ ...city, activeScore: rankScore(city) }));
 }
 
 function renderSelection() {
   const meta = getSelectionMeta();
   const selectedCity = cityByName.get(selectedCityName) ?? topCities()[0];
 
-  els.mapTitle.textContent = activePair ? meta.title : `${meta.title} Density`;
+  els.mapTitle.textContent = activePair ? `${clusterById.get(activeClusterId).label} Heat` : `${meta.title} Density`;
   els.legendHigh.textContent = legendMaxText();
-  els.selectionTitle.textContent = activePair ? meta.pairTitle : meta.title;
+  els.contourLegend.hidden = !activePair;
+  if (activePair) {
+    els.contourLabel.textContent = `${clusterById.get(activePair[1]).label} contours`;
+  }
+  els.selectionTitle.textContent = activePair ? `${clusterById.get(activeClusterId).label} heat + ${clusterById.get(activePair[1]).label} contours` : meta.title;
   els.currentRead.textContent = activePair
     ? selectedCity.name
     : `${selectedCity.name}: ${metricText(selectedCity, activeClusterId)}`;
@@ -917,29 +1095,38 @@ function renderInsights() {
   }
 }
 
-function buildQuery() {
-  if (activePair) {
-    const a = clusterById.get(activePair[0]);
-    const b = clusterById.get(activePair[1]);
-    return `# Run these as separate Bay Area facets, then join by city and compute overlap.
-
-type:${a.queryType}
-${BAY_AREA_FILTER}
-description:or(${a.dqlTerms})
-facet:locations.city.name
-
-type:${b.queryType}
-${BAY_AREA_FILTER}
-description:or(${b.dqlTerms})
-facet:locations.city.name`;
-  }
-
-  const cluster = clusterById.get(activeClusterId);
+function dqlForSignal(cluster) {
   const searchableField = cluster.queryType === "Event" ? "name" : "description";
   return `type:${cluster.queryType}
 ${BAY_AREA_FILTER}
 ${searchableField}:or(${cluster.dqlTerms})
 facet:locations.city.name`;
+}
+
+function buildLayerQuery(layerId) {
+  const layer = clusterById.get(layerId);
+  if (layer?.components?.length) {
+    return `# ${layer.label} is an equal-weight composite index.
+# Run each component facet, convert each city to density per 10k indexed orgs,
+# scale each component to 0-1 across Bay Area cities, then average.
+
+${layer.components.map((componentId) => `# ${clusterById.get(componentId).label}\n${dqlForSignal(clusterById.get(componentId))}`).join("\n\n")}`;
+  }
+  return dqlForSignal(layer);
+}
+
+function buildQuery() {
+  if (activePair) {
+    const a = clusterById.get(activeClusterId);
+    const b = clusterById.get(activePair[1]);
+    return `# Pair mode draws ${a.label} as heat and ${b.label} as contour lines.
+
+${buildLayerQuery(activeClusterId)}
+
+${buildLayerQuery(activePair[1])}`;
+  }
+
+  return buildLayerQuery(activeClusterId);
 }
 
 function renderQuery() {

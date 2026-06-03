@@ -25,13 +25,13 @@
           <select id="scaleSelect" class="select-control scale-control" aria-label="Color scale" title="Color scale"></select>
 
           <div class="pair-fields" id="pairFields" hidden>
-            <span aria-hidden="true">x</span>
-            <select id="secondaryClusterSelect" class="select-control" aria-label="Second cluster"></select>
+            <span aria-hidden="true">contour</span>
+            <select id="secondaryClusterSelect" class="select-control" aria-label="Contour layer"></select>
           </div>
 
           <div class="mode-control" aria-label="Map mode">
             <button class="round-button active" id="singleMode" type="button" title="Single signal" aria-label="Single signal">1</button>
-            <button class="round-button" id="pairMode" type="button" title="Overlap" aria-label="Overlap">2</button>
+            <button class="round-button" id="pairMode" type="button" title="Heat plus contours" aria-label="Heat plus contours">2</button>
           </div>
 
           <button class="round-button" id="detailsToggle" type="button" title="Details" aria-label="Details">i</button>
@@ -44,6 +44,10 @@
           <span>0</span>
           <div class="gradient-bar"></div>
           <span id="legendHigh">max</span>
+        </div>
+        <div class="contour-legend" id="contourLegend" hidden>
+          <span class="contour-swatch"></span>
+          <span id="contourLabel">Contours</span>
         </div>
       </div>
 

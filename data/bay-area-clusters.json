@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T01:35:53.280Z",
+  "generatedAt": "2026-06-03T00:52:10.805Z",
   "source": "diffbot-dql-facet",
   "cities": [
     {
@@ -11,13 +11,17 @@
         "kumon": 1124,
         "boba": 148,
         "chai": 114,
+        "chineseFood": 338,
         "indoChinese": 8,
         "grocery": 6,
-        "ai": 14743,
+        "ai": 11024,
         "weekend": 224,
-        "festivals": 35,
-        "weddings": 39,
-        "sports": 113
+        "language": 199,
+        "sports": 113,
+        "vc": 2049,
+        "meetups": 1723,
+        "coworking": 309,
+        "research": 3117
       }
     },
     {
@@ -29,13 +33,17 @@
         "kumon": 263,
         "boba": 27,
         "chai": 32,
+        "chineseFood": 57,
         "indoChinese": 1,
         "grocery": 2,
-        "ai": 1986,
+        "ai": 1764,
         "weekend": 85,
-        "festivals": 14,
-        "weddings": 17,
-        "sports": 28
+        "language": 40,
+        "sports": 28,
+        "vc": 94,
+        "meetups": 281,
+        "coworking": 62,
+        "research": 685
       }
     },
     {
@@ -47,13 +55,17 @@
         "kumon": 164,
         "boba": 32,
         "chai": 39,
+        "chineseFood": 24,
         "indoChinese": 2,
         "grocery": 0,
-        "ai": 1098,
+        "ai": 924,
         "weekend": 63,
-        "festivals": 5,
-        "weddings": 9,
-        "sports": 14
+        "language": 9,
+        "sports": 14,
+        "vc": 86,
+        "meetups": 173,
+        "coworking": 35,
+        "research": 1937
       }
     },
     {
@@ -65,13 +77,17 @@
         "kumon": 22,
         "boba": 10,
         "chai": 1,
+        "chineseFood": 26,
         "indoChinese": 0,
         "grocery": 1,
-        "ai": 132,
+        "ai": 123,
         "weekend": 9,
-        "festivals": 1,
-        "weddings": 3,
-        "sports": 7
+        "language": 12,
+        "sports": 7,
+        "vc": 3,
+        "meetups": 5,
+        "coworking": 1,
+        "research": 40
       }
     },
     {
@@ -83,13 +99,17 @@
         "kumon": 101,
         "boba": 16,
         "chai": 22,
+        "chineseFood": 33,
         "indoChinese": 3,
         "grocery": 2,
-        "ai": 1128,
+        "ai": 904,
         "weekend": 25,
-        "festivals": 2,
-        "weddings": 7,
-        "sports": 11
+        "language": 13,
+        "sports": 11,
+        "vc": 145,
+        "meetups": 147,
+        "coworking": 27,
+        "research": 206
       }
     },
     {
@@ -101,13 +121,17 @@
         "kumon": 59,
         "boba": 10,
         "chai": 10,
+        "chineseFood": 7,
         "indoChinese": 1,
         "grocery": 0,
-        "ai": 961,
+        "ai": 772,
         "weekend": 15,
-        "festivals": 4,
-        "weddings": 0,
-        "sports": 12
+        "language": 5,
+        "sports": 12,
+        "vc": 119,
+        "meetups": 60,
+        "coworking": 8,
+        "research": 456
       }
     },
     {
@@ -119,13 +143,17 @@
         "kumon": 58,
         "boba": 0,
         "chai": 4,
+        "chineseFood": 3,
         "indoChinese": 1,
         "grocery": 0,
-        "ai": 1186,
+        "ai": 590,
         "weekend": 17,
-        "festivals": 1,
-        "weddings": 0,
-        "sports": 8
+        "language": 4,
+        "sports": 8,
+        "vc": 494,
+        "meetups": 46,
+        "coworking": 17,
+        "research": 368
       }
     },
     {
@@ -137,13 +165,17 @@
         "kumon": 164,
         "boba": 17,
         "chai": 22,
+        "chineseFood": 15,
         "indoChinese": 2,
         "grocery": 0,
-        "ai": 2916,
+        "ai": 1931,
         "weekend": 35,
-        "festivals": 1,
-        "weddings": 5,
-        "sports": 15
+        "language": 9,
+        "sports": 15,
+        "vc": 684,
+        "meetups": 216,
+        "coworking": 28,
+        "research": 2361
       }
     },
     {
@@ -155,13 +187,17 @@
         "kumon": 97,
         "boba": 15,
         "chai": 21,
+        "chineseFood": 18,
         "indoChinese": 4,
         "grocery": 1,
-        "ai": 1439,
+        "ai": 1175,
         "weekend": 35,
-        "festivals": 0,
-        "weddings": 5,
-        "sports": 18
+        "language": 7,
+        "sports": 18,
+        "vc": 121,
+        "meetups": 222,
+        "coworking": 13,
+        "research": 377
       }
     },
     {
@@ -173,13 +209,17 @@
         "kumon": 116,
         "boba": 19,
         "chai": 85,
+        "chineseFood": 26,
         "indoChinese": 7,
         "grocery": 3,
-        "ai": 1482,
+        "ai": 1214,
         "weekend": 39,
-        "festivals": 7,
-        "weddings": 13,
-        "sports": 23
+        "language": 21,
+        "sports": 23,
+        "vc": 101,
+        "meetups": 180,
+        "coworking": 21,
+        "research": 328
       }
     },
     {
@@ -191,13 +231,17 @@
         "kumon": 110,
         "boba": 20,
         "chai": 51,
+        "chineseFood": 30,
         "indoChinese": 2,
         "grocery": 1,
-        "ai": 1667,
+        "ai": 1394,
         "weekend": 26,
-        "festivals": 1,
-        "weddings": 16,
-        "sports": 24
+        "language": 22,
+        "sports": 24,
+        "vc": 141,
+        "meetups": 145,
+        "coworking": 12,
+        "research": 474
       }
     },
     {
@@ -209,13 +253,17 @@
         "kumon": 86,
         "boba": 21,
         "chai": 7,
+        "chineseFood": 28,
         "indoChinese": 1,
         "grocery": 3,
-        "ai": 507,
+        "ai": 419,
         "weekend": 35,
-        "festivals": 2,
-        "weddings": 3,
-        "sports": 19
+        "language": 20,
+        "sports": 19,
+        "vc": 52,
+        "meetups": 50,
+        "coworking": 8,
+        "research": 138
       }
     },
     {
@@ -227,13 +275,17 @@
         "kumon": 55,
         "boba": 21,
         "chai": 41,
+        "chineseFood": 36,
         "indoChinese": 4,
         "grocery": 6,
-        "ai": 435,
+        "ai": 395,
         "weekend": 24,
-        "festivals": 3,
-        "weddings": 15,
-        "sports": 43
+        "language": 17,
+        "sports": 43,
+        "vc": 17,
+        "meetups": 40,
+        "coworking": 4,
+        "research": 105
       }
     },
     {
@@ -245,13 +297,17 @@
         "kumon": 170,
         "boba": 34,
         "chai": 93,
+        "chineseFood": 52,
         "indoChinese": 8,
         "grocery": 5,
-        "ai": 1183,
+        "ai": 1080,
         "weekend": 84,
-        "festivals": 7,
-        "weddings": 34,
-        "sports": 58
+        "language": 22,
+        "sports": 58,
+        "vc": 41,
+        "meetups": 132,
+        "coworking": 6,
+        "research": 306
       }
     },
     {
@@ -263,13 +319,17 @@
         "kumon": 52,
         "boba": 24,
         "chai": 18,
+        "chineseFood": 18,
         "indoChinese": 0,
         "grocery": 2,
-        "ai": 482,
+        "ai": 446,
         "weekend": 18,
-        "festivals": 1,
-        "weddings": 16,
-        "sports": 16
+        "language": 11,
+        "sports": 16,
+        "vc": 11,
+        "meetups": 32,
+        "coworking": 3,
+        "research": 220
       }
     },
     {
@@ -281,13 +341,17 @@
         "kumon": 113,
         "boba": 19,
         "chai": 29,
+        "chineseFood": 17,
         "indoChinese": 2,
         "grocery": 5,
-        "ai": 676,
+        "ai": 626,
         "weekend": 28,
-        "festivals": 3,
-        "weddings": 15,
-        "sports": 25
+        "language": 14,
+        "sports": 25,
+        "vc": 28,
+        "meetups": 46,
+        "coworking": 10,
+        "research": 322
       }
     },
     {
@@ -299,13 +363,17 @@
         "kumon": 79,
         "boba": 9,
         "chai": 25,
+        "chineseFood": 6,
         "indoChinese": 1,
         "grocery": 0,
-        "ai": 514,
+        "ai": 471,
         "weekend": 22,
-        "festivals": 1,
-        "weddings": 10,
-        "sports": 18
+        "language": 6,
+        "sports": 18,
+        "vc": 15,
+        "meetups": 64,
+        "coworking": 9,
+        "research": 147
       }
     },
     {
@@ -317,13 +385,17 @@
         "kumon": 509,
         "boba": 112,
         "chai": 100,
+        "chineseFood": 125,
         "indoChinese": 3,
         "grocery": 4,
-        "ai": 4472,
+        "ai": 3991,
         "weekend": 201,
-        "festivals": 13,
-        "weddings": 38,
-        "sports": 99
+        "language": 69,
+        "sports": 99,
+        "vc": 204,
+        "meetups": 565,
+        "coworking": 58,
+        "research": 1370
       }
     }
   ],
@@ -345,6 +417,10 @@
       "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"chai\",\"dosa\",\"chaat\",\"biryani\",\"Indian restaurant\",\"South Indian\",\"Gujarati\",\"Punjabi\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
     },
     {
+      "id": "chineseFood",
+      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"Chinese restaurant\",\"dim sum\",\"hot pot\",\"Sichuan\",\"Cantonese\",\"Taiwanese restaurant\",\"Shanghainese\",\"noodle house\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
+    },
+    {
       "id": "indoChinese",
       "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"Indo Chinese\",\"Indian Chinese\",\"Hakka noodles\",\"Gobi Manchurian\",\"chili paneer\",\"Schezwan\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
     },
@@ -354,23 +430,35 @@
     },
     {
       "id": "ai",
-      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"artificial intelligence\",\"machine learning\",\"LLM\",\"startup\",\"venture capital\",\"accelerator\",\"software company\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
+      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"artificial intelligence\",\"machine learning\",\"LLM\",\"computer vision\",\"natural language processing\",\"AI startup\",\"software company\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
     },
     {
       "id": "weekend",
       "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"Chinese School\",\"Mandarin School\",\"Hindi School\",\"Tamil School\",\"Telugu School\",\"Bharatanatyam\",\"tabla\",\"piano\",\"chess\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
     },
     {
-      "id": "festivals",
-      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"Diwali\",\"Holi\",\"Navratri\",\"Lunar New Year\",\"Chinese New Year\",\"Mid-Autumn\",\"Dragon Boat\",\"cultural festival\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
-    },
-    {
-      "id": "weddings",
-      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"wedding planner\",\"banquet hall\",\"mehndi\",\"henna\",\"mandap\",\"sari\",\"lehenga\",\"qipao\",\"cheongsam\",\"vegetarian catering\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
+      "id": "language",
+      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"language school\",\"Mandarin School\",\"Chinese language\",\"Cantonese\",\"Hindi class\",\"Tamil class\",\"Telugu class\",\"Korean school\",\"Japanese school\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
     },
     {
       "id": "sports",
       "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"badminton\",\"table tennis\",\"cricket\",\"pickleball\",\"chess club\",\"ping pong\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
+    },
+    {
+      "id": "vc",
+      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"venture capital\",\"startup accelerator\",\"incubator\",\"seed fund\",\"angel investor\",\"venture studio\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
+    },
+    {
+      "id": "meetups",
+      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"meetup\",\"hackathon\",\"networking event\",\"founder community\",\"startup community\",\"developer community\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
+    },
+    {
+      "id": "coworking",
+      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"coworking\",\"co-working\",\"shared office\",\"flexible workspace\",\"WeWork\",\"Regus\",\"Industrious\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
+    },
+    {
+      "id": "research",
+      "query": "type:Organization\nlocations.{isCurrent:true country.name:\"United States\" region.name:\"California\" city.name:or(\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\")}\ndescription:or(\"university\",\"research institute\",\"research center\",\"laboratory\",\"Stanford\",\"UC Berkeley\",\"NASA Ames\")\nfacet[\"San Francisco\",\"Oakland\",\"Berkeley\",\"Daly City\",\"San Mateo\",\"Redwood City\",\"Menlo Park\",\"Palo Alto\",\"Mountain View\",\"Sunnyvale\",\"Santa Clara\",\"Cupertino\",\"Milpitas\",\"Fremont\",\"Hayward\",\"Pleasanton\",\"San Ramon\",\"San Jose\"]:locations.city.name"
     }
   ]
 }
