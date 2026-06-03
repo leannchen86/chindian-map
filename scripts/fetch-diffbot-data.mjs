@@ -112,7 +112,7 @@ const clusters = [
     id: "sports",
     type: "Organization",
     field: "description",
-    terms: ["badminton", "table tennis", "cricket", "pickleball", "chess club", "ping pong"],
+    terms: ["badminton", "table tennis", "cricket", "ping pong"],
   },
   {
     id: "vc",
@@ -131,12 +131,6 @@ const clusters = [
     type: "Organization",
     field: "description",
     terms: ["coworking", "co-working", "shared office", "flexible workspace", "WeWork", "Regus", "Industrious"],
-  },
-  {
-    id: "research",
-    type: "Organization",
-    field: "description",
-    terms: ["university", "research institute", "research center", "laboratory", "Stanford", "UC Berkeley", "NASA Ames"],
   },
 ];
 

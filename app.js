@@ -50,18 +50,18 @@ const clusters = [
   },
   {
     id: "ai",
-    label: "Startup Gravity",
+    label: "Startups",
     color: "#315f8f",
     scoreMode: "gravity",
     scoreWeights: { raw: 0.4, density: 0.3, blended: 0.3 },
-    copy: "AI companies, software orgs, accelerators, venture-adjacent offices, and places where people say agentic out loud.",
+    copy: "AI companies, software startups, and places where people say agentic out loud.",
     labelForHigh: "Seed Round Weather System",
     dqlTerms: '"artificial intelligence","machine learning","LLM","computer vision","natural language processing","AI startup","software company"',
     queryType: "Organization",
   },
   {
     id: "weekend",
-    label: "Weekend Academies",
+    label: "Weekend Schools",
     color: "#b35648",
     sourceIds: ["weekend", "language"],
     copy: "Language schools, cultural classes, chess, music, dance, and the general disappearance of free Saturdays.",
@@ -71,16 +71,16 @@ const clusters = [
   },
   {
     id: "sports",
-    label: "Badminton Cricket Table Tennis",
+    label: "Asian Sports",
     color: "#517a50",
-    copy: "Badminton, cricket, table tennis, pickleball, and chess clubs: the underrated social graph.",
+    copy: "Badminton, cricket, and table tennis: the underrated weekend social graph.",
     labelForHigh: "Weekend League Diplomacy",
-    dqlTerms: '"badminton","table tennis","cricket","pickleball","chess club","ping pong"',
+    dqlTerms: '"badminton","table tennis","cricket","ping pong"',
     queryType: "Organization",
   },
   {
     id: "vc",
-    label: "Startup Capital",
+    label: "VC",
     color: "#476da2",
     copy: "Venture firms, accelerators, incubators, seed funds, angel groups, and the institutions around startup weather.",
     labelForHigh: "Capital Pressure System",
@@ -89,7 +89,7 @@ const clusters = [
   },
   {
     id: "meetups",
-    label: "Startup Events",
+    label: "Meetups",
     color: "#5c73a5",
     copy: "Meetups, hackathons, networking events, founder communities, and developer communities.",
     labelForHigh: "Networking Front",
@@ -105,15 +105,6 @@ const clusters = [
     dqlTerms: '"coworking","co-working","shared office","flexible workspace","WeWork","Regus","Industrious"',
     queryType: "Organization",
   },
-  {
-    id: "research",
-    label: "Research",
-    color: "#4f8797",
-    copy: "Universities, research institutes, labs, and the academic gravity underneath the startup layer.",
-    labelForHigh: "Research Gravity Well",
-    dqlTerms: '"university","research institute","research center","laboratory","Stanford","UC Berkeley","NASA Ames"',
-    queryType: "Organization",
-  },
 ];
 
 const presets = [
@@ -121,7 +112,7 @@ const presets = [
     id: "saturday",
     label: "Saturday Route Optimization",
     components: ["kumon", "weekend", "grocery", "sports"],
-    copy: "Tutoring, weekend academies, Asian groceries, and sports fused into one suburban logistics index.",
+    copy: "Tutoring, weekend schools, Asian groceries, and Asian sports fused into one suburban logistics index.",
     labelForHigh: "Maximum Saturday Compression",
   },
   {
@@ -134,11 +125,11 @@ const presets = [
   {
     id: "techSocial",
     label: "Tech Social Gravity",
-    components: ["ai", "vc", "meetups", "coworking", "research"],
+    components: ["ai", "vc", "meetups", "coworking"],
     scoreMode: "gravity",
-    componentWeights: { ai: 0.38, vc: 0.24, meetups: 0.1, coworking: 0.08, research: 0.2 },
+    componentWeights: { ai: 0.45, vc: 0.3, meetups: 0.15, coworking: 0.1 },
     componentScoreWeights: { raw: 0.25, density: 0.2, blended: 0.55 },
-    copy: "AI, venture, meetups, coworking, and university/research gravity.",
+    copy: "Startups, VC, meetups, and coworking gravity.",
     labelForHigh: "Founder Weather System",
   },
   {
@@ -298,7 +289,7 @@ const pairLabels = {
   },
   "ai|vc": {
     title: "Pitch Deck Weather",
-    body: "AI and capital infrastructure overlap where the startup layer is not just companies, but an ecosystem.",
+    body: "Startups and VC overlap where the startup layer is not just companies, but an ecosystem.",
   },
   "coworking|meetups": {
     title: "Laptop Social Layer",
