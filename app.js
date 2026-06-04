@@ -3,17 +3,8 @@ const BAY_AREA_FILTER =
 
 const clusters = [
   {
-    id: "kumon",
-    label: "Tutoring",
-    color: "#e26f5a",
-    copy: "Tutoring, test prep, coding schools, and the unmistakable scent of Saturday morning optimization.",
-    labelForHigh: "After-School Pressure Zone",
-    dqlTerms: '"Kumon","Mathnasium","Russian School of Mathematics","AoPS","Code Ninjas","coding classes","SAT","ACT","tutoring"',
-    queryType: "Organization",
-  },
-  {
     id: "boba",
-    label: "Boba Liquidity",
+    label: "Boba",
     color: "#168c8c",
     copy: "Milk tea, dessert cafes, and the informal caffeine rails of Silicon Valley social life.",
     labelForHigh: "Pearl-Adjusted Caffeine Corridor",
@@ -63,10 +54,10 @@ const clusters = [
     id: "weekend",
     label: "Weekend Schools",
     color: "#b35648",
-    sourceIds: ["weekend", "language"],
-    copy: "Language schools, cultural classes, chess, music, dance, and the general disappearance of free Saturdays.",
+    sourceIds: ["weekend", "language", "kumon"],
+    copy: "Tutoring, test prep, language schools, cultural classes, chess, music, dance, and the general disappearance of free Saturdays.",
     labelForHigh: "Saturday Never Happened",
-    dqlTerms: '"language school","Chinese School","Mandarin School","Chinese language","Cantonese","Hindi School","Hindi class","Tamil School","Tamil class","Telugu School","Telugu class","Korean school","Japanese school","Bharatanatyam","tabla","piano","chess"',
+    dqlTerms: '"Kumon","Mathnasium","Russian School of Mathematics","AoPS","Code Ninjas","coding classes","SAT","ACT","tutoring","language school","Chinese School","Mandarin School","Chinese language","Cantonese","Hindi School","Hindi class","Tamil School","Tamil class","Telugu School","Telugu class","Korean school","Japanese school","Bharatanatyam","tabla","piano","chess"',
     queryType: "Organization",
   },
   {
@@ -102,8 +93,8 @@ const presets = [
   {
     id: "saturday",
     label: "Saturday Route Optimization",
-    components: ["kumon", "weekend", "grocery", "sports"],
-    copy: "Tutoring, weekend schools, Asian groceries, and Asian sports fused into one suburban logistics index.",
+    components: ["weekend", "grocery", "sports"],
+    copy: "Weekend schools, Asian groceries, and Asian sports fused into one suburban logistics index.",
     labelForHigh: "Maximum Saturday Compression",
   },
   {
@@ -247,10 +238,6 @@ let cities = [
 ];
 
 const pairLabels = {
-  "boba|kumon": {
-    title: "After-School Caffeine Corridor",
-    body: "Milk tea and tutoring show up together where the school-night logistics are most optimized.",
-  },
   "boba|chai": {
     title: "Milk Tea Meets Masala",
     body: "Boba density and Indian restaurant coverage mark the casual food-social layer of the crossover map.",
@@ -263,13 +250,9 @@ const pairLabels = {
     title: "Seed Round Over Masala Dosa",
     body: "Indian food coverage and startup gravity overlap in the places where dinner can become a pitch deck.",
   },
-  "grocery|kumon": {
-    title: "Parent Errand Stack",
-    body: "Tutoring centers and grocery anchors cluster into the most efficient Saturday route possible.",
-  },
   "sports|weekend": {
     title: "Saturday Was Never Free",
-    body: "Weekend academies and sports form the extracurricular backbone of suburban Asian logistics.",
+    body: "Weekend schools and sports form the extracurricular backbone of suburban Asian logistics.",
   },
   "chai|grocery": {
     title: "Masala Supply Chain",

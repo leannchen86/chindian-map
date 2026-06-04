@@ -30,7 +30,7 @@ Raw match counts are still shown in popups and the details drawer. The color res
 
 The primary selector is signal-only. Composite indexes are intentionally left out of this menu until they move into a separate layer.
 
-Two earlier experimental signals are now folded into broader fields: Indo-Chinese menu terms live inside `Indian Food`, and language-school terms live inside `Weekend Schools`. The earlier university/research signal was removed because it mostly reflected Stanford and UC Berkeley.
+Several earlier experimental signals are now folded into broader fields: Indo-Chinese menu terms live inside `Indian Food`; tutoring, test-prep, and language-school terms live inside `Weekend Schools`. The earlier university/research signal was removed because it mostly reflected Stanford and UC Berkeley.
 
 The DQL panel in the UI shows the intended Diffbot handoff: facet each signal by Bay Area city, then compute densities and pairwise correlations from those city distributions.
 

@@ -34,12 +34,6 @@ const bayAreaFilter =
 
 const clusters = [
   {
-    id: "kumon",
-    type: "Organization",
-    field: "description",
-    terms: ["Kumon", "Mathnasium", "Russian School of Mathematics", "AoPS", "Code Ninjas", "coding classes", "SAT", "ACT", "tutoring"],
-  },
-  {
     id: "boba",
     type: "Organization",
     field: "description",
@@ -89,6 +83,15 @@ const clusters = [
     type: "Organization",
     field: "description",
     terms: [
+      "Kumon",
+      "Mathnasium",
+      "Russian School of Mathematics",
+      "AoPS",
+      "Code Ninjas",
+      "coding classes",
+      "SAT",
+      "ACT",
+      "tutoring",
       "language school",
       "Chinese School",
       "Mandarin School",
