@@ -92,7 +92,7 @@ const labels = [
     city: "Palo Alto",
     dx: -68,
     dy: -86,
-    title: "VC Pressure Ridge",
+    title: "VCs Pressure Ridge",
     detail: "Palo Alto + Menlo Park",
   },
   {

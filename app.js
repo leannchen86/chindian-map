@@ -71,7 +71,7 @@ const clusters = [
   },
   {
     id: "vc",
-    label: "VC",
+    label: "VCs",
     color: "#476da2",
     copy: "Venture firms, accelerators, incubators, seed funds, angel groups, and the institutions around startup weather.",
     labelForHigh: "Capital Pressure System",
@@ -111,7 +111,7 @@ const presets = [
     scoreMode: "gravity",
     componentWeights: { ai: 0.5, vc: 0.32, meetups: 0.18 },
     componentScoreWeights: { raw: 0.25, density: 0.2, blended: 0.55 },
-    copy: "Startups, VC, and meetups gravity.",
+    copy: "Startups, VCs, and meetups gravity.",
     labelForHigh: "Founder Weather System",
   },
   {
@@ -264,7 +264,7 @@ const pairLabels = {
   },
   "ai|vc": {
     title: "Pitch Deck Weather",
-    body: "Startups and VC overlap where the startup layer is not just companies, but an ecosystem.",
+    body: "Startups and VCs overlap where the startup layer is not just companies, but an ecosystem.",
   },
 };
 
