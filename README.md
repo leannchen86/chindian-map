@@ -18,6 +18,18 @@ There is also a static poster draft:
 http://127.0.0.1:4178/poster.html
 ```
 
+There is a separate universal heatmap lab for trying natural-language prompts without touching the clean `4178` prototype:
+
+```bash
+node server-universal.mjs
+```
+
+```txt
+http://127.0.0.1:4188/
+```
+
+The lab keeps the Diffbot token server-side, drafts a structured Bay Area-only DQL query from prompts like `asian bakeries`, runs live Diffbot facet queries, and can save experimental layers to `universal/custom-layers.json`. That saved layer file is ignored by git so local experiments do not clutter the repo.
+
 The current data falls back to seeded city-level counts. If `data/bay-area-clusters.json` exists, the app loads that Diffbot snapshot instead. Most signal layers use coverage-adjusted density:
 
 ```txt

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Universal Bay Area Heatmap Lab</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="./universal.css" />
+  </head>
+  <body>
+    <main class="lab-shell">
+      <div id="labMap" class="lab-map" role="img" aria-label="Universal Bay Area heatmap"></div>
+
+      <section class="composer" aria-label="Create custom heatmap layer">
+        <div class="brand">
+          <span>Universal Heatmap Lab</span>
+          <strong>Type any Bay Area vibe</strong>
+        </div>
+
+        <form id="promptForm" class="prompt-form">
+          <input
+            id="promptInput"
+            autocomplete="off"
+            placeholder="asian bakeries"
+            aria-label="Describe a signal"
+          />
+          <button type="submit">Draft</button>
+        </form>
+
+        <div class="examples" aria-label="Example prompts">
+          <button type="button" data-prompt="asian bakeries">asian bakeries</button>
+          <button type="button" data-prompt="pilates studios">pilates studios</button>
+          <button type="button" data-prompt="hot pot">hot pot</button>
+        </div>
+
+        <div class="editor">
+          <label>
+            <span>Layer</span>
+            <input id="labelInput" aria-label="Layer name" />
+          </label>
+          <label>
+            <span>Terms</span>
+            <textarea id="termsInput" aria-label="Search terms"></textarea>
+          </label>
+        </div>
+
+        <div class="actions">
+          <button id="runLayer" type="button">Run Diffbot</button>
+          <button id="saveLayer" type="button" disabled>Save Layer</button>
+        </div>
+
+        <p id="statusText" class="status">Draft a layer to preview DQL.</p>
+      </section>
+
+      <aside class="readout" aria-label="Layer readout">
+        <div class="readout-heading">
+          <div>
+            <span>Active Layer</span>
+            <strong id="activeLayerName">No custom layer yet</strong>
+          </div>
+          <select id="savedLayers" aria-label="Saved custom layers">
+            <option value="">Saved layers</option>
+          </select>
+        </div>
+
+        <ol id="rankList" class="rank-list"></ol>
+
+        <details>
+          <summary>DQL preview</summary>
+          <pre><code id="dqlText"></code></pre>
+        </details>
+      </aside>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="./universal.js"></script>
+  </body>
+</html>
